@@ -1,0 +1,21 @@
+@import "../../scss/config";
+
+.course {
+  margin: spacing(5) 0;
+  &__headline {
+    margin-bottom: spacing(3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+      @include Text($textGrey, $h4, $fwMedium, spacing(2));
+      flex-grow: 1;
+    }
+  }
+  &__line {
+    width: spacing(45);
+    height: spacing(0.1);
+    background: $grey;
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,43 @@
+.header {
+  background: white !important;
+  height: 75px;
+  max-width: 1300px;
+  margin: 0 auto !important;
+}
+
+.header__navBar {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.header__leftNav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__navBrand img {
+  height: 85px;
+}
+
+.header__search {
+  position: relative;
+  margin-left: 20px;
+}
+
+.header__navLink {
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 400;
+  color: black;
+}
+
+.header__navLink:hover {
+  text-decoration: none;
+  color: #19a8e6;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+/*# sourceMappingURL=index.css.map */
