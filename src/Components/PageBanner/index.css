@@ -1,0 +1,117 @@
+.pageBanner {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.pageBanner__image {
+  width: 1800px;
+  height: 600px;
+  background-image: url("../../Assets/img/spotlight-1-770x332.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  will-change: transform;
+  -webkit-animation: bannerMove 40s linear infinite;
+          animation: bannerMove 40s linear infinite;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.pageBanner::after {
+  content: "";
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #222222;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.pageBanner__text {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 60%;
+  left: 50%;
+  z-index: 3;
+}
+
+.pageBanner__text h3 {
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 10px;
+  margin-bottom: 50px;
+}
+
+.pageBanner__subText {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pageBanner__subText p {
+  color: #d6d6d6;
+  font-size: h3;
+  font-weight: 400;
+  line-height: 10px;
+  text-align: center;
+}
+
+.pageBanner__link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 10px;
+  margin-right: 20px;
+}
+
+.pageBanner__link:hover {
+  text-decoration: none;
+  color: #1aa9c2;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+@-webkit-keyframes bannerMove {
+  from {
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
+            transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate3d(-100px, -100px, 0) rotate(0.001deg);
+            transform: translate3d(-100px, -100px, 0) rotate(0.001deg);
+  }
+}
+
+@keyframes bannerMove {
+  from {
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
+            transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate3d(-100px, -100px, 0) rotate(0.001deg);
+            transform: translate3d(-100px, -100px, 0) rotate(0.001deg);
+  }
+}
+/*# sourceMappingURL=index.css.map */

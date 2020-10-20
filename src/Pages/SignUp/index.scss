@@ -1,0 +1,20 @@
+@import "../../scss/config";
+
+.signUp{
+    width: 100%;
+    height: spacing(60);
+    &__text{
+        margin: spacing(5) 0;
+        padding-bottom: spacing(2);
+        border-bottom: spacing(0.2) solid $textLightGrey;;
+        h3{
+            text-align: center;
+            @include Text($textBlack,$h2,$fwMedium,none);
+            margin-bottom: spacing(4);
+        }
+    }
+    &__item{
+        margin-bottom: spacing(2);
+    }
+    
+}

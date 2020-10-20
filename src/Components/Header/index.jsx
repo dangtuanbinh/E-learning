@@ -1,11 +1,4 @@
-// import {
-//   AppBar,
-//   Button,
-//   Toolbar,
-//   Container,
-//   Typography,
-//   Box,
-// } from "@material-ui/core";
+
 import {
   Collapse,
   Navbar,
@@ -23,44 +16,39 @@ import SearchIcon from "@material-ui/icons/Search";
 import { NavLink } from "react-router-dom";
 import "./index.scss";
 import logo from "../../Assets/img/horizontal_on_white_by_logaster-removebg-preview.png";
-import { Box, Button, Container } from "@material-ui/core";
+import { Box, Button} from "@material-ui/core";
+import {useEffect} from "react"
+import SignInButton from "../../Components/SignInButton/index"
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // Header size change
+  // useEffect(() => {
+  //   window.addEventListener("scroll",handleScroll)
+  // },[])
+  // useEffect(() =>{
+  //   return removeHandleScroll();
+  // },[])
+  // const handleScroll = () =>{
+  //   if (window.scrollY > 70){
+  //     document.querySelector(".header__container").className = "header__container__scroll";
+  //   }
+    //  else {
+    //   document.querySelector(".header__container").className ="header__container"
+    // }
+  // }
+  // const removeHandleScroll = () =>{
+  //   if (window.scrollY === 0){
+  //     document.querySelector(".header__container").className = "header__container"
+  //   }
+  // }
 
+  // NavBar Toggler
+  const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   return (
     <>
-      {/* <AppBar className="header">
-          <Container className="header__appBar">
-            <Toolbar>
-              <Typography className="header__navBrand">
-                <img src={logo}></img>
-              </Typography>
-              <Box textAlign="center" className="header__navBar" justifyContent="center">
-                <NavLink to="/" className="header__navLink">Home</NavLink>
-                <NavLink to="/about" className="header__navLink">About us</NavLink>
-                <NavLink to="/course" className="header__navLink">Courses</NavLink>
-                <NavLink to="/event" className="header__navLink">Events</NavLink>
-                <NavLink to="/contact" className="header__navLink">Contact</NavLink>
-              </Box>
-              <Box justifyContent="flex-end"  className="header__leftNav">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  className="header__loginButton"
-                >
-                  Sign in
-                </Button>
-                <div className="header__search">
-                  <SearchIcon />
-                </div>
-              </Box>
-            </Toolbar>
-          </Container>
-        </AppBar> */}
       <Box className="header">
-        <Container>
+        <Box className="header__container">
           <Navbar color="light" light className="header__navBar" expand="md">
             <NavbarBrand>
               <Box className="header__navBrand">
@@ -107,19 +95,12 @@ const Header = () => {
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
-
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    className="header__loginButton"
-                  >
-                    Sign in
-                  </Button>
+                  <SignInButton />
                 </Nav>
               </Box>
             </Collapse>
           </Navbar>
-        </Container>
+        </Box>
       </Box>
     </>
   );

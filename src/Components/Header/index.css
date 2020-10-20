@@ -1,14 +1,31 @@
 .header {
-  background: white !important;
-  height: 75px;
-  max-width: 1300px;
-  margin: 0 auto !important;
+  background: none !important;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+}
+
+.header__container {
+  max-width: 1170px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.header__container__scroll {
+  width: 100%;
+  height: 60px;
 }
 
 .header__navBar {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__leftNav {
@@ -17,8 +34,14 @@
   display: flex;
 }
 
+.header__nav {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .header__navBrand img {
-  height: 85px;
+  height: 80px;
 }
 
 .header__search {
@@ -27,10 +50,12 @@
 }
 
 .header__navLink {
-  margin-right: 20px;
+  margin-right: 40px;
   text-decoration: none;
   font-size: 22px;
   font-weight: 400;
+  text-align: center;
+  line-height: 70px;
   color: black;
 }
 

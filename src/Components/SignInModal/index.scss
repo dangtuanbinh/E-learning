@@ -1,0 +1,24 @@
+@import "../../scss/config";
+
+.modal {
+  &__header {
+      text-align: center;
+      @include Text($primary, $h5, $fwMedium, none)
+  }
+  &__forgotPassword{
+      a{
+          font-size: $subtitle;
+      }
+  }
+  &__text{
+      border-left: spacing(0.1) solid $textLightGrey;
+      padding: spacing(3) spacing(4);
+  }
+  &__icon{
+      margin-top: spacing(2);
+      text-align: center;
+  }
+  &__link{
+      text-align: center;
+  }
+}

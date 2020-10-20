@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
-import Header from '../Components/Header/index'
+import PageHeader from '../Components/PageHeader/index'
+import Footer from '../Components/Footer/index'
 
 const wrapper = (Component) => {
     return(props) => {
         return (
             <>
-            <Header />
+            <PageHeader />
             <Component {...props} />
+            <Footer />
             </>
         );
     }

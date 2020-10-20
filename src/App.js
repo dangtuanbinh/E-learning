@@ -7,22 +7,23 @@ import Course from "./Pages/Courses/index";
 import Event from "./Pages/Events/index";
 import Contact from "./Pages/Contact/index";
 import Detail from "./Pages/DetailCouse/index";
+import SignUp from "./Pages/SignUp/index";
 
 class App extends Component {
   render() {
-    return(
+    return (
       <BrowserRouter>
         <Switch>
-          <Route path="/contact" component={Contact}/>
-          <Route path="/detail" component={Detail}/>
-          <Route path="/event" component={Event}/>
-          <Route path="/course" component={Course}/>
-          <Route path="/about" component={About}/>
-          <Route path="/" component={Home}/>
+          <Route path="/signup" component={SignUp} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/detail" component={Detail} />
+          <Route path="/event" component={Event} />
+          <Route path="/course" component={Course} />
+          <Route path="/about" component={About} />
+          <Route path="/" component={Home} />
         </Switch>
       </BrowserRouter>
-    
-    )
+    );
   }
 }
 export default App;

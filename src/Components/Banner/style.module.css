@@ -17,7 +17,7 @@
     content: '';
     width: 0;
     height: 0;
-    background: #19a8e6;
+    background: #4968ee;
     position: absolute;
     transform: translate(-50%,-50%);
     top:50%;
@@ -41,7 +41,7 @@
     z-index: 1;
 }
 .bannerIcon{
-    color:#19a8e6;
+    color:#4968ee;
     margin-right: 20px;
     z-index: 1;
 }
