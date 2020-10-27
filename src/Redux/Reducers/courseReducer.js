@@ -6,7 +6,7 @@ const courseReducer = (state = initialState, actions) => {
   switch (actions.type) {
     case "GET_LIST_COURSE": {
       state.courseList = actions.payload;
-      return {...state};
+      return { ...state };
     }
     default:
       return state;

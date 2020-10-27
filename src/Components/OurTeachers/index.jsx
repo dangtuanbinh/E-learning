@@ -10,9 +10,9 @@ export default function index() {
   return (
     <section className={classes.OurTeachers}>
       <Container fixed>
-        <div className={classes.title}>
+        <div div className={classes.title}>
           <div className={classes.line}></div>
-          <h6 div className={classes.h6title}>
+          <h6 className={classes.h6title}>
             OUR TEACHERS
           </h6>
         </div>

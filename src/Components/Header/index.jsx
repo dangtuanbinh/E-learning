@@ -1,4 +1,3 @@
-
 import {
   Collapse,
   Navbar,
@@ -16,40 +15,55 @@ import SearchIcon from "@material-ui/icons/Search";
 import { NavLink } from "react-router-dom";
 import "./index.scss";
 import logo from "../../Assets/img/horizontal_on_white_by_logaster-removebg-preview.png";
-import { Box, Button} from "@material-ui/core";
-import {useEffect} from "react"
-import SignInButton from "../../Components/SignInButton/index"
+import { Box } from "@material-ui/core";
+import { useSelector } from "react-redux";
+import SignInButton from "../../Components/SignInButton/index";
+import Switch from "@material-ui/core/Switch";
+import LogInUser from "../../Components/LogInUser/index";
+
 
 const Header = () => {
   // Header size change
-  // useEffect(() => {
-  //   window.addEventListener("scroll",handleScroll)
-  // },[])
-  // useEffect(() =>{
-  //   return removeHandleScroll();
-  // },[])
-  // const handleScroll = () =>{
-  //   if (window.scrollY > 70){
-  //     document.querySelector(".header__container").className = "header__container__scroll";
-  //   }
-    //  else {
-    //   document.querySelector(".header__container").className ="header__container"
-    // }
-  // }
-  // const removeHandleScroll = () =>{
-  //   if (window.scrollY === 0){
-  //     document.querySelector(".header__container").className = "header__container"
-  //   }
-  // }
+  const [navBar, setNavBar] = useState(false);
+  const changeNavBar = () => {
+    if (window.scrollY > 20) {
+      setNavBar(true);
+    } else {
+      setNavBar(false);
+    }
+  };
+  window.addEventListener("scroll", changeNavBar);
+  // End of header size change
+
+  // Switch
+  const [state, setState] = React.useState({
+    checked: true,
+  });
+
+  const handleChange = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
+  // End of switch
 
   // NavBar Toggler
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  // End of navBar Toggler
+
+  // Set up Login user
+  const login = useSelector((state) => {
+    return !!state.accessToken;
+  })
+  console.log(login);
+  // End of setup login user
+
   return (
     <>
       <Box className="header">
-        <Box className="header__container">
-          <Navbar color="light" light className="header__navBar" expand="md">
+        <Box
+          className={navBar ? "header__container__scroll" : "header__container"}
+        >
+          <Navbar light expand="md">
             <NavbarBrand>
               <Box className="header__navBrand">
                 <img src={logo}></img>
@@ -91,11 +105,33 @@ const Header = () => {
                       </DropdownItem>
                       <DropdownItem divider />
                       <DropdownItem>
-                        <NavLink to="/course">All Course</NavLink>
+                        <NavLink to="/courses">All Course</NavLink>
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
-                  <SignInButton />
+                  <Box className="header__icon">
+                    {/* Signin Button */}
+                    <Box>
+                      {login ? (
+                        <LogInUser />
+                      ) : (<SignInButton />)}
+                    </Box>
+
+                    {/* Search Icon */}
+                    <Box>
+                      <SearchIcon className="header__searchIcon" />
+                    </Box>
+
+                    {/* Switch button */}
+                    <Box>
+                      <Switch
+                        checked={state.checked}
+                        onChange={handleChange}
+                        name="checked"
+                        inputProps={{ "aria-label": "primary checkbox" }}
+                      />
+                    </Box>
+                  </Box>
                 </Nav>
               </Box>
             </Collapse>

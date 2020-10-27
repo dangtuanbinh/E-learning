@@ -1,6 +1,8 @@
 import { Typography } from "@material-ui/core";
 import React, { useState } from "react";
 import PageHeader from "../../Components/PageHeader/index";
+import Banner from "../../Components/PageBanner/index";
+import Content from "../../Components/ContactUsGetInTouch/index";
 import Footer from "../../Components/Footer/index";
 import PreloadingPage from "../../Components/PreloadingPage/index";
 
@@ -16,6 +18,8 @@ const Contact = () => {
       ) : (
         <>
           <PageHeader />
+          <Banner />
+          <Content />
           <Typography component="h2">this is Contact page</Typography>
           <Footer />
         </>

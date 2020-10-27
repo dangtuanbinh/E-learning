@@ -1,7 +1,6 @@
 import { Container, Grid, Typography } from "@material-ui/core";
-import React, { Component } from "react";
+import React from "react";
 import style from "./style";
-import logo from "../../Assets/img/logo-inverse-162x51.png";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -30,10 +29,10 @@ export default function index() {
                 xl={3}
                 className={classes.topContentLeft}
               >
-                <img src={logo} alt="logo" />
+    
                 <p>
-                  Providing professional online business education for students
-                  from all over the world since 1999.{" "}
+                  Providing professional online Information Technology education for students
+                  from all over the world since 2019.{" "}
                 </p>
                 <div className={classes.topContentLeftBottom}>
                   <ul style={{ listStyleType: "none" }}>
@@ -41,7 +40,7 @@ export default function index() {
                       <div className={classes.topContentLeftBottomContact}>
                         <PhoneIcon className={classes.icon} />
                         <a href="#">
-                          <span>+1 323-913-4688</span>{" "}
+                          <span>+84 34 810 7118</span>{" "}
                         </a>
                       </div>
                     </li>
@@ -58,7 +57,7 @@ export default function index() {
                         <LocationOnIcon className={classes.icon} />
                         <a href="#">
                           <span>
-                            4730 Crystal Springs Dr, Los Angeles, CA 90027
+                            1/6 Son Ky Street, Ward Son Ky, Tan Phu District, Ho Chi Minh city, Viet Nam
                           </span>
                         </a>
                       </div>
@@ -78,7 +77,7 @@ export default function index() {
                 <p>Join Our Email List for Tips and Useful Information</p>
                 <input type="text" placeholder="Enter Your E-mail" />
 
-                <button onclick="">Subscribe</button>
+                <button>Subscribe</button>
                 <div className={classes.social}>
                   <Typography>Follow Us</Typography>
                   <a href="#">

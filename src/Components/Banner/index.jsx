@@ -1,11 +1,10 @@
 import { Box, Container } from "@material-ui/core";
 import React from "react";
-import { Col, Row } from "reactstrap";
 import CollectionsBookmarkOutlinedIcon from "@material-ui/icons/CollectionsBookmarkOutlined";
 import CardMembershipOutlinedIcon from "@material-ui/icons/CardMembershipOutlined";
 import WbIncandescentOutlinedIcon from "@material-ui/icons/WbIncandescentOutlined";
 import classes from "./style.module.css";
-import { CheckBox } from "@material-ui/icons";
+
 
 const Banner = () => {
   return (

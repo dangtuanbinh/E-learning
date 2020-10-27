@@ -9,21 +9,22 @@ import { getListCourse } from "../../Action/courseAction";
 
 const Course = () => {
   const dispatch = useDispatch();
-  // getCourseList() will run when the component fist stars to get courselist
+  // getCourseList() will run when the component fist rendered to get courselist
   useEffect(() => {
     dispatch(getListCourse());
-  }, []);
+  }, [dispatch]);
   // Get courseList from store
   const courseList = useSelector((state) => {
-      return state.courseList;
+    return state.course.courseList;
   });
 
-  const renderCourseList = () =>{
+  const renderCourseList = () => {
     if (!courseList) return null;
-    return courseList.map((course, index) => {
-      return <CourseItem course ={course} key={index} />
-    })
-  }
+    let newCourseList =courseList.slice(2,8)
+    return newCourseList.map((course, index) => {
+      return <CourseItem course={course} key={index} />;
+    });
+  };
   return (
     <>
       <Container id="course">
@@ -33,15 +34,7 @@ const Course = () => {
             <h3>POPULAR COURSES</h3>
             <Box className="course__line"></Box>
           </Box>
-          <Row>
-            <CourseItem />
-            <CourseItem />
-            <CourseItem />
-            <CourseItem />
-            <CourseItem />
-            <CourseItem />
-            {/* {renderCourseList} */}
-          </Row>
+          <Row>{renderCourseList()}</Row>
         </Box>
       </Container>
     </>

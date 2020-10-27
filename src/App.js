@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/index";
 import About from "./Pages/About/index";
-import Course from "./Pages/Courses/index";
+import AllCourses from "./Pages/AllCourses/index";
 import Event from "./Pages/Events/index";
 import Contact from "./Pages/Contact/index";
-import Detail from "./Pages/DetailCouse/index";
+import Detail from "./Pages/DetailCourse/index";
 import SignUp from "./Pages/SignUp/index";
 
 class App extends Component {
@@ -18,7 +18,7 @@ class App extends Component {
           <Route path="/contact" component={Contact} />
           <Route path="/detail" component={Detail} />
           <Route path="/event" component={Event} />
-          <Route path="/course" component={Course} />
+          <Route path="/courses" component={AllCourses} />
           <Route path="/about" component={About} />
           <Route path="/" component={Home} />
         </Switch>

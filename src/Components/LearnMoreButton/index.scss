@@ -6,13 +6,15 @@
     border: 2px solid $textBlack;
     position: relative;
     cursor: pointer;
+    text-align: center;
     &__link{
         text-decoration: none;
-        @include Text($textBlack,$h6,$fwRegular,none);
+        @include Text($textBlack,$h6,$fwRegular,spacing(6));
         position: absolute;
         transform: translate(-50%,-50%);
         top: 50%;
         left: 50%;
+        z-index: 10;
     }
     &::after{
         content: '';

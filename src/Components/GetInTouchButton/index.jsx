@@ -8,7 +8,7 @@ const GetInTouchButton = () => {
     <>
       <Box className="getInTouchButton">
         <Box className="getInTouchButton__container">
-          <NavLink className="getInTouchButton__link" to="/contact">
+          <NavLink className="getInTouchButton__link" exact to="/contact">
             GET IN TOUCH
           </NavLink>
         </Box>

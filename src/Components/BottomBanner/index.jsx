@@ -7,9 +7,6 @@ export default function index() {
   return (
     <section className={classes.BottomBanner}>
       <Container>
-        {/* <div className={classes.test}>
-
-          </div> */}
         <div className={classes.BottomBannerWrapper}>
           <h3>Programs for Executives</h3>
           <p>

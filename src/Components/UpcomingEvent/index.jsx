@@ -1,4 +1,4 @@
-import { Container, Grid, Icon, Typography } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import React from "react";
 import style from "./style";
 import pic1 from "../../Assets/img/post-22-570x492.jpg";

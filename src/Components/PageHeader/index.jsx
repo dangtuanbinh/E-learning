@@ -1,4 +1,3 @@
-
 import {
   Collapse,
   Navbar,
@@ -12,34 +11,23 @@ import {
   DropdownItem,
 } from "reactstrap";
 import React, { useState } from "react";
-import SearchIcon from "@material-ui/icons/Search";
 import { NavLink } from "react-router-dom";
-import "./index.scss";
 import logo from "../../Assets/img/horizontal_on_white_by_logaster-removebg-preview.png";
-import { Box, Button} from "@material-ui/core";
-import {useEffect} from "react"
+import { Box } from "@material-ui/core";
+import SignInButton from "../../Components/SignInButton/index";
+import "./index.scss";
 
 const PageHeader = () => {
   // Header size change
-  // useEffect(() => {
-  //   window.addEventListener("scroll",handleScroll)
-  // },[])
-  // useEffect(() =>{
-  //   return removeHandleScroll();
-  // },[])
-  // const handleScroll = () =>{
-  //   if (window.scrollY > 70){
-  //     document.querySelector(".header__container").className = "header__container__scroll";
-  //   }
-    //  else {
-    //   document.querySelector(".header__container").className ="header__container"
-    // }
-  // }
-  // const removeHandleScroll = () =>{
-  //   if (window.scrollY === 0){
-  //     document.querySelector(".header__container").className = "header__container"
-  //   }
-  // }
+  const [navBar, setNavBar] = useState(false);
+  const changeNavBar = () => {
+    if (window.scrollY > 20) {
+      setNavBar(true);
+    } else {
+      setNavBar(false);
+    }
+  };
+  window.addEventListener("scroll", changeNavBar);
 
   // NavBar Toggler
   const [isOpen, setIsOpen] = useState(false);
@@ -47,21 +35,21 @@ const PageHeader = () => {
   return (
     <>
       <Box className="pageHeader">
-        <Box className="pageHeader__container">
-          <Navbar color="white" light className="header__navBar" expand="md">
+          <Navbar light className={navBar ? 'pageHeader__navBar__container--scroll' : 'pageHeader__navBar__container'} expand="md">
             <NavbarBrand>
               <Box className="pageHeader__navBrand">
-                <img src={logo}></img>
+                <img src={logo} alt="logo"></img>
               </Box>
             </NavbarBrand>
-            <NavbarToggler onClick={toggle} />
+            <NavbarToggler dark onClick={toggle} />
             <Collapse className="pageHeader__navBar" isOpen={isOpen} navbar>
               <Box>
-                <Nav className="mr-auto pageHeader__nav" navBar>
-                  <NavItem>
+                <Nav className="pageHeader__nav" navBar>
+                  <NavItem className="pageHeader__navItem">
                     <NavLink className="pageHeader__navLink" to="/">
                       Home
                     </NavLink>
+                    <Box className="pageHeader__underline"></Box>
                   </NavItem>
                   <NavItem>
                     <NavLink className="pageHeader__navLink" to="/about">
@@ -90,22 +78,16 @@ const PageHeader = () => {
                       </DropdownItem>
                       <DropdownItem divider />
                       <DropdownItem>
-                        <NavLink to="/course">All Course</NavLink>
+                        <NavLink to="/courses">All Course</NavLink>
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                  >
-                    Sign in
-                  </Button>
+                  <SignInButton />
                 </Nav>
               </Box>
             </Collapse>
           </Navbar>
         </Box>
-      </Box>
     </>
   );
 };

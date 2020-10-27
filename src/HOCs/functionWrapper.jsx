@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PageHeader from '../Components/PageHeader/index'
 import Footer from '../Components/Footer/index'
 

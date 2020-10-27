@@ -1,6 +1,6 @@
 @import "../../scss/config";
 .getInTouchButton {
-    width: spacing(23);
+  width: spacing(23);
   cursor: pointer;
   &__container {
     width: spacing(23);
@@ -19,10 +19,10 @@
     text-decoration: none;
     color: $textBlack;
   }
-  &:hover &__container{
-      background: transparent;
-      border: spacing(0.2) solid $dark;
-      overflow: hidden;
-      box-shadow: 4px 2px 7px -2px rgba(0,0,0,0.75);
+  &:hover &__container {
+    background: transparent;
+    border: spacing(0.2) solid $dark;
+    overflow: hidden;
+    box-shadow: 4px 2px 7px -2px rgba(0, 0, 0, 0.75);
   }
 }
