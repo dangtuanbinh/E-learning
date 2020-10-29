@@ -5,7 +5,10 @@ import useModal from "../../HOCs/useModal";
 import "./index.scss";
 
 const SignInButton = () => {
+  // Setup modal
   const {modal, toggle} = useModal();
+  // End of setup modal
+  
   const renderModal =() =>{
     return <SignInModal modal={modal} toggle={toggle}/>
   }

@@ -1,13 +1,18 @@
-const initialState ={
-    accessToken = []
-}
+const initialState = {
+  loggedInUser: "",
+};
 
-const authReducer = (state = initialState, actions) => {
-    switch (actions.type) {
-        case "SET_TOKEN": {
-            state.accessToken = actions.payload;
-            return {...state};
-        }
-        default: return state;
+const authReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "SET_USER": {
+      return { ...state, loggedInUser: action.payload };
     }
-}
+    case "DELETE_USER": {
+      return {...state, loggedInUser: action.payload};
+    }
+    default:
+      return state;
+  }
+};
+
+export default authReducer;

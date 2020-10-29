@@ -1,5 +1,5 @@
 import { Box } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import {
@@ -30,26 +30,33 @@ const SignInModal = (props) => {
     taiKhoan: "",
     matKhau: "",
   });
-  const [redirect, setRedirect] = useState(null);
-
   const handleOnchange = (e) => {
     setLoginUser({ ...loginUser, [e.target.name]: e.target.value });
   };
 
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(logIn(loginUser, props.history));
-    if (localStorage.getItem("accessToken")) {
-      setRedirect("/");
-    }
+    dispatch(logIn(loginUser));
   };
   // End of log in setup
 
+  // Check accessToken
+  // const [redirect, setRedirect] = useState(null);
+  // useEffect(
+  //   setTimeout(() => {
+  //     if (localStorage.getItem("accessToken")) {
+  //       setRedirect("/");
+  //     }
+  //   }, 500),
+  //   []
+  // );
+  // End of check accessToken
+
   // Redirect setup
 
-  if (redirect) {
-    return <Redirect to={redirect} />;
-  }
+  // if (redirect) {
+  //   return <Redirect to={redirect} />;
+  // }
 
   // End of redirect setup
   return (

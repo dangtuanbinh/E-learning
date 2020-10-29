@@ -3,7 +3,6 @@ import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import image from "../../Assets/img/about-image.jpg";
 import PropTypes from "prop-types";
-import { useState } from "react";
 import SwipeableViews from "react-swipeable-views";
 import AdjustOutlinedIcon from "@material-ui/icons/AdjustOutlined";
 import GetInTouchButton from "../../Components/GetInTouchButton/index";

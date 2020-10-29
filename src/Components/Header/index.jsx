@@ -21,7 +21,6 @@ import SignInButton from "../../Components/SignInButton/index";
 import Switch from "@material-ui/core/Switch";
 import LogInUser from "../../Components/LogInUser/index";
 
-
 const Header = () => {
   // Header size change
   const [navBar, setNavBar] = useState(false);
@@ -51,11 +50,9 @@ const Header = () => {
   // End of navBar Toggler
 
   // Set up Login user
-  const login = useSelector((state) => {
-    return !!state.accessToken;
-  })
-  console.log(login);
-  // End of setup login user
+  const loggedInUser = useSelector((state) => {
+    return state.auth.loggedInUser;
+  });
 
   return (
     <>
@@ -112,9 +109,8 @@ const Header = () => {
                   <Box className="header__icon">
                     {/* Signin Button */}
                     <Box>
-                      {login ? (
-                        <LogInUser />
-                      ) : (<SignInButton />)}
+                      {loggedInUser ? <LogInUser /> : <SignInButton />}
+                      {/* <LogInUser /> */}
                     </Box>
 
                     {/* Search Icon */}

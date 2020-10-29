@@ -16,7 +16,7 @@ export const signUp = (user) => {
   };
 };
 
-export const logIn = (loginUser, history) => {
+export const logIn = (loginUser) => {
   return (dispatch) => {
     Axios({
       url:
@@ -27,8 +27,8 @@ export const logIn = (loginUser, history) => {
       .then((res) => {
         localStorage.setItem("accessToken", res.data.accessToken);
         dispatch({
-          type: "SET_TOKEN",
-          payload: res.data.accessToken,
+          type: "SET_USER",
+          payload: res.data,
         });
       })
       .catch((err) => {
