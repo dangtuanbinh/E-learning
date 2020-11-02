@@ -18,7 +18,7 @@ import { Box, Switch } from "@material-ui/core";
 import SignInButton from "../../Components/SignInButton/index";
 import LogInUser from "../../Components/LogInUser/index";
 import SearchIcon from "@material-ui/icons/Search";
-import { Redirect } from "react-router-dom";
+import ViewListIcon from "@material-ui/icons/ViewList";
 import "./index.scss";
 
 const PageHeader = () => {
@@ -130,6 +130,11 @@ const PageHeader = () => {
                 <Box>
                   <SearchIcon className="pageHeader__searchIcon" />
                 </Box>
+
+                {/* Wish-list icon */}
+                <Box>
+                      <ViewListIcon className="pageHeader__listIcon" />
+                    </Box>
 
                 {/* Switch button */}
                 <Box>

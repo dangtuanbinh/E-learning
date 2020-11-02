@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styles from "./style";
 import { withStyles } from "@material-ui/core/styles";
 import Header from "../../Components/Header/index";
 import Carousel from "../../Components/Carousel/index";
@@ -43,4 +42,4 @@ const Home = () => {
   );
 };
 
-export default withStyles(styles, { withTheme: true })(Home);
+export default Home;

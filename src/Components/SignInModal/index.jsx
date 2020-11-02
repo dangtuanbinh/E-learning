@@ -1,5 +1,5 @@
 import { Box } from "@material-ui/core";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import {
@@ -16,7 +16,7 @@ import TextField from "@material-ui/core/TextField";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { logIn } from "../../Action/userAction";
-import { Redirect } from "react-router-dom";
+
 import "./index.scss";
 
 const SignInModal = (props) => {
@@ -40,25 +40,6 @@ const SignInModal = (props) => {
   };
   // End of log in setup
 
-  // Check accessToken
-  // const [redirect, setRedirect] = useState(null);
-  // useEffect(
-  //   setTimeout(() => {
-  //     if (localStorage.getItem("accessToken")) {
-  //       setRedirect("/");
-  //     }
-  //   }, 500),
-  //   []
-  // );
-  // End of check accessToken
-
-  // Redirect setup
-
-  // if (redirect) {
-  //   return <Redirect to={redirect} />;
-  // }
-
-  // End of redirect setup
   return (
     <>
       <Box className="modal">

@@ -136,7 +136,7 @@ const LogInUser = () => {
                       />
                       <Tab
                         className="logInUser__tabItem"
-                        label="Courses"
+                        label="Wish Lists"
                         {...a11yProps(1)}
                       />
                     </Tabs>
@@ -151,6 +151,14 @@ const LogInUser = () => {
                       <Box className="logInUser__item">
                         <Container>
                           <Row>
+                          <Col lg="6">
+                              <TextField
+                                disabled
+                                id="standard-basic"
+                                label={loggedInUser.taiKhoan}
+                              />
+                            </Col>
+
                             <Col lg="6">
                               <TextField
                                 disabled
@@ -175,13 +183,6 @@ const LogInUser = () => {
                               />
                             </Col>
 
-                            <Col lg="6">
-                              <TextField
-                                disabled
-                                id="standard-basic"
-                                label="Standard"
-                              />
-                            </Col>
                           </Row>
                         </Container>
                         <Box className="logInUser__item__button">

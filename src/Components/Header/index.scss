@@ -7,7 +7,7 @@
     position: fixed;
     z-index: 100;
     &__container{
-        max-width: 1170px;
+        max-width: 1250px;
         margin: 0 auto;
         margin-top: 20px;
         background: white;
@@ -47,7 +47,7 @@
     .MuiSvgIcon-root{
         font-size: 2.2em;
     }
-    &__searchIcon{
+    &__searchIcon, &__listIcon{
         color: $primary;
         margin-left: spacing(2);
         cursor: pointer;

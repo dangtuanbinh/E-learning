@@ -11,55 +11,78 @@ import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import { red } from "@material-ui/core/colors";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import AnnouncementIcon from "@material-ui/icons/Announcement";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import img from "../../Assets/img/user-4-49x49.jpg";
+import { Box, Typography } from "@material-ui/core";
+import Popover from "@material-ui/core/Popover";
+import "./index.scss";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      maxWidth: 345,
-      border: "solid",
-      marginBottom: 20,
-    },
-    media: {
-      height: 0,
-      paddingTop: '56.25%', // 16:9
-    },
-    expand: {
-      transform: 'rotate(0deg)',
-      marginLeft: 'auto',
-      transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-      }),
-    },
-    expandOpen: {
-      transform: 'rotate(180deg)',
-    },
-    avatar: {
-      backgroundColor: red[500],
-    },
-  }));
+  // Card setup
+  media: {
+    height: 0,
+    paddingTop: "56.25%", // 16:9
+    transition: "all 0.2s ease-in",
+  },
+  expand: {
+    transform: "rotate(0deg)",
+    marginLeft: "auto",
+    transition: theme.transitions.create("transform", {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: "rotate(180deg)",
+  },
+  avatar: {
+    backgroundColor: red[500],
+  },
+  // End of Card set up
+
+  // Pop over setup
+  popover: {
+    pointerEvents: "none",
+  },
+  paper: {
+    padding: theme.spacing(1),
+  },
+  // End of Popover setup
+}));
 
 const CourseItem = (props) => {
-  // Course
-  
-
-  // End of course
+  // Card setup
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  // End of card setup
+
+  // Popover setup
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  // End of Popover setup
   return (
     <>
-      <Col lg="4">
-        <Card className={classes.root}>
+      <Col lg="4" className="course__item">
+        <Card className="course__item__card">
           <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatar}>
-                R
+                <img src={img} />
               </Avatar>
             }
             action={
@@ -67,24 +90,84 @@ const CourseItem = (props) => {
                 <MoreVertIcon />
               </IconButton>
             }
-            title={props.course.tenKhoaHoc}
+            title={props.course.nguoiTao.hoTen}
           />
-          <CardMedia
-            className={classes.media}
-            image={props.course.hinhAnh}
-          />
-          <CardContent>
-            {/* <Typography variant="body2" color="textSecondary" component="p">
-              {props.course.moTa}
-            </Typography> */}
-          </CardContent>
+          <Box className="course__item__image">
+            <CardMedia className={classes.media} image={props.course.hinhAnh} />
+          </Box>
+
+          <CardContent>{props.course.tenKhoaHoc}</CardContent>
           <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-            <IconButton aria-label="share">
-              <ShareIcon />
-            </IconButton>
+            {/* Detaile icon */}
+            <Box>
+              <IconButton
+                aria-label="laear more"
+                aria-owns={open ? "mouse-over-popover1" : undefined}
+                aria-haspopup="true"
+                onMouseEnter={handlePopoverOpen}
+                onMouseLeave={handlePopoverClose}
+              >
+                <AnnouncementIcon />
+              </IconButton>
+              <Popover
+                id="mouse-over-popover1"
+                className={classes.popover}
+                classes={{
+                  paper: classes.paper,
+                }}
+                open={open}
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                onClose={handlePopoverClose}
+                disableRestoreFocus
+              >
+                <Typography>Learn More</Typography>
+              </Popover>
+            </Box>
+            {/* End of Detail icon */}
+
+            {/* Add to favorite icon */}
+            <Box>
+              <IconButton
+                aria-label="add to favorites"
+                aria-owns={open ? "mouse-over-popover" : undefined}
+                aria-haspopup="true"
+                onMouseEnter={handlePopoverOpen}
+                onMouseLeave={handlePopoverClose}
+              >
+                <FavoriteIcon />
+              </IconButton>
+              <Popover
+                id="mouse-over-popover"
+                className={classes.popover}
+                classes={{
+                  paper: classes.paper,
+                }}
+                open={open}
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                onClose={handlePopoverClose}
+                disableRestoreFocus
+              >
+                <span>Add to Wish-list</span>
+              </Popover>
+            </Box>
+            {/* End of Add to favourite icon */}
+
             <IconButton
               className={clsx(classes.expand, {
                 [classes.expandOpen]: expanded,
@@ -97,13 +180,11 @@ const CourseItem = (props) => {
             </IconButton>
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <CardContent>
-              {props.course.moTa}
-            </CardContent>
+            <p className="course__item__text">{props.course.moTa}</p>
           </Collapse>
         </Card>
       </Col>
     </>
-  )
+  );
 };
 export default CourseItem;

@@ -63,7 +63,7 @@
     width: 60%;
     transition: all 0.8s ease-in-out;
   }
-  &__searchIcon {
+  &__searchIcon, &__listIcon {
     color: $primary;
     margin-left: spacing(2);
     cursor: pointer;

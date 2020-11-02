@@ -20,6 +20,9 @@ import { useSelector } from "react-redux";
 import SignInButton from "../../Components/SignInButton/index";
 import Switch from "@material-ui/core/Switch";
 import LogInUser from "../../Components/LogInUser/index";
+import ViewListIcon from "@material-ui/icons/ViewList";
+import useModal from "../../HOCs/useModal";
+import WishListModal from "../../Components/WishListModal/index";
 
 const Header = () => {
   // Header size change
@@ -46,14 +49,21 @@ const Header = () => {
 
   // NavBar Toggler
   const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+  const navBarToggle = () => setIsOpen(!isOpen);
   // End of navBar Toggler
 
   // Set up Login user
   const loggedInUser = useSelector((state) => {
     return state.auth.loggedInUser;
   });
+  // End of user login
 
+  // Wish list modal setup
+  const {modal, toggle} = useModal();
+  const renderWishListModal = () =>{
+    return <WishListModal modal={modal} toggleModal={toggle}/>
+  }
+  // End of modal setup
   return (
     <>
       <Box className="header">
@@ -66,7 +76,7 @@ const Header = () => {
                 <img src={logo}></img>
               </Box>
             </NavbarBrand>
-            <NavbarToggler onClick={toggle} />
+            <NavbarToggler onClick={navBarToggle} />
             <Collapse className="header__navBar" isOpen={isOpen} navbar>
               <Box>
                 <Nav className="mr-auto header__nav" navBar>
@@ -116,6 +126,12 @@ const Header = () => {
                     {/* Search Icon */}
                     <Box>
                       <SearchIcon className="header__searchIcon" />
+                    </Box>
+
+                    {/* Wish-list icon */}
+                     <Box onClick={toggle}>
+                      <ViewListIcon className="header__listIcon" />
+                      {renderWishListModal()}
                     </Box>
 
                     {/* Switch button */}

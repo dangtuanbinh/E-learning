@@ -7,11 +7,10 @@ import "./index.scss";
 const SignInButton = () => {
   // Setup modal
   const {modal, toggle} = useModal();
-  // End of setup modal
-  
-  const renderModal =() =>{
+  const renderModal = () =>{
     return <SignInModal modal={modal} toggle={toggle}/>
   }
+  // End of setup modal
   return (
     <>
       <Box className="signInButton">
