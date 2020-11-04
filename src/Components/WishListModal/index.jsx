@@ -12,11 +12,27 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import { useSelector } from "react-redux";
+import WishListItem from "../../Components/WishListItem/index"
 
 import "./index.scss";
 
 const WishListModal = (props) => {
   let { modal, toggleModal } = props;
+  // Get wish list
+  const wishList = useSelector((state) => {
+    return state.wishList.wishList;
+  });
+  // End of get wish list
+  
+  // Render WishListItem
+  const renderWishListItem = () => {
+    if (!wishList) return null;
+    return wishList.map((course,index) => {
+      return <WishListItem course ={course} key={index} />
+    })
+  }
+  // End of render WishListItem
   return (
     <>
       <Box className="wishListModal">
@@ -25,7 +41,7 @@ const WishListModal = (props) => {
             Welcome back coder!
           </ModalHeader>
           <ModalBody>
-              <h1>Wishlist</h1>
+            {renderWishListItem()}
           </ModalBody>
         </Modal>
       </Box>

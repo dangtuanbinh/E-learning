@@ -16,8 +16,9 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import AnnouncementIcon from "@material-ui/icons/Announcement";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import img from "../../Assets/img/user-4-49x49.jpg";
-import { Box, Typography } from "@material-ui/core";
+import { Box, Button, Typography } from "@material-ui/core";
 import Popover from "@material-ui/core/Popover";
+import { useDispatch } from "react-redux";
 import "./index.scss";
 
 const useStyles = makeStyles((theme) => ({
@@ -44,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
 
   // Pop over setup
   popover: {
+    pointerEvents: "none",
+  },
+  popover__second: {
     pointerEvents: "none",
   },
   paper: {
@@ -75,6 +79,17 @@ const CourseItem = (props) => {
 
   const open = Boolean(anchorEl);
   // End of Popover setup
+
+  // Put to wish list
+  const dispatch = useDispatch();
+  const putToWishList = () => {
+    dispatch({
+      type: "PUT_TO_WISHLIST",
+      payload: props,
+    });
+  };
+  // End of put to wish list
+
   return (
     <>
       <Col lg="4" className="course__item">
@@ -99,18 +114,18 @@ const CourseItem = (props) => {
           <CardContent>{props.course.tenKhoaHoc}</CardContent>
           <CardActions disableSpacing>
             {/* Detaile icon */}
-            <Box>
-              <IconButton
-                aria-label="laear more"
-                aria-owns={open ? "mouse-over-popover1" : undefined}
-                aria-haspopup="true"
-                onMouseEnter={handlePopoverOpen}
-                onMouseLeave={handlePopoverClose}
-              >
+            <Box
+              aria-label="learn more"
+              aria-owns={open ? "learn-more-popover" : undefined}
+              aria-haspopup="true"
+              onMouseEnter={handlePopoverOpen}
+              onMouseLeave={handlePopoverClose}
+            >
+              <IconButton>
                 <AnnouncementIcon />
               </IconButton>
               <Popover
-                id="mouse-over-popover1"
+                id="learn-more-popover"
                 className={classes.popover}
                 classes={{
                   paper: classes.paper,
@@ -134,19 +149,19 @@ const CourseItem = (props) => {
             {/* End of Detail icon */}
 
             {/* Add to favorite icon */}
-            <Box>
-              <IconButton
-                aria-label="add to favorites"
-                aria-owns={open ? "mouse-over-popover" : undefined}
-                aria-haspopup="true"
-                onMouseEnter={handlePopoverOpen}
-                onMouseLeave={handlePopoverClose}
-              >
+            <Box
+              aria-label="add to favorites"
+              aria-owns={open ? "mouse-over-popover-2" : undefined}
+              aria-haspopup="true"
+              onMouseEnter={handlePopoverOpen}
+              onMouseLeave={handlePopoverClose}
+            >
+              <IconButton onClick={() => putToWishList()}>
                 <FavoriteIcon />
               </IconButton>
               <Popover
-                id="mouse-over-popover"
-                className={classes.popover}
+                id="mouse-over-popover-2"
+                className={classes.popover__second}
                 classes={{
                   paper: classes.paper,
                 }}
