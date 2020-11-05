@@ -5,16 +5,17 @@ const initialState = {
 const wishListReducer = (state = initialState, actions) => {
     switch (actions.type){
         case "PUT_TO_WISHLIST": {
-            const index = state.wishList.findIndex((item) => item.wishListCourse.tenKhoaHoc === actions.payload.tenKhoaHoc)
-
-            const cloneWishList = [...state.wishList]
+            const index = state.wishList.findIndex((item) => item.wishListCourse.course.tenKhoaHoc === actions.payload.course.tenKhoaHoc)
             if (index == -1) {
                 const wishListItem = {
                     wishListCourse : actions.payload,
                     quantity: 1
                 } 
-                cloneWishList.push(wishListItem)
+                return {
+                    wishList :[...state.wishList,wishListItem]
+                }
             } else {
+                let cloneWishList = [...state.wishList]
                 cloneWishList[index].quantity++
             }
         }

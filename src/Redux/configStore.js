@@ -6,7 +6,7 @@ import wishList from './Reducers/wishListReducer'
 import { compose } from 'redux';
 
 const reducer = combineReducers({
-    course,
+    course, 
     auth,
     wishList
 });

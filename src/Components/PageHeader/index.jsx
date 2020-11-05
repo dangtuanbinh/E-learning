@@ -127,17 +127,17 @@ const PageHeader = () => {
                 <Box>{loggedInUser ? <LogInUser /> : <SignInButton />}</Box>
 
                 {/* Search Icon */}
-                <Box>
-                  <SearchIcon className="pageHeader__searchIcon" />
+                <Box className="pageHeader__searchIcon">
+                  <SearchIcon  />
                 </Box>
 
                 {/* Wish-list icon */}
-                <Box>
-                      <ViewListIcon className="pageHeader__listIcon" />
+                <Box className="pageHeader__listIcon">
+                      <ViewListIcon  />
                     </Box>
 
                 {/* Switch button */}
-                <Box>
+                <Box className="pageHeader__switch">
                   <Switch
                     checked={state.checked}
                     onChange={handleChange}

@@ -16,6 +16,7 @@ import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
+import "./index.scss";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -55,7 +56,7 @@ const AllCourseItem = (props) => {
   };
   return (
     <>
-      <Col lg="4">
+      <Col lg="4" className = "allCourse__item">
         <Card className={classes.root}>
           <CardHeader
             avatar={
@@ -74,11 +75,7 @@ const AllCourseItem = (props) => {
             className={classes.media}
             image={props.course.hinhAnh}
           />
-          <CardContent>
-            {/* <Typography variant="body2" color="textSecondary" component="p">
-              {props.course.moTa}
-            </Typography> */}
-          </CardContent>
+          <CardContent>{props.course.tenKhoaHoc}</CardContent>
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
               <FavoriteIcon />

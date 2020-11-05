@@ -102,7 +102,7 @@ const Header = () => {
                   </NavItem>
 
                   <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle className="header__navLink" nav caret>
+                    <DropdownToggle className="header__navLink" nav >
                       Course
                     </DropdownToggle>
                     <DropdownMenu right>
@@ -124,18 +124,18 @@ const Header = () => {
                     </Box>
 
                     {/* Search Icon */}
-                    <Box>
-                      <SearchIcon className="header__searchIcon" />
+                    <Box className="header__searchIcon">
+                      <SearchIcon  />
                     </Box>
 
                     {/* Wish-list icon */}
-                     <Box onClick={toggle}>
-                      <ViewListIcon className="header__listIcon" />
+                     <Box onClick={toggle} className="header__listIcon">
+                      <ViewListIcon  />
                       {renderWishListModal()}
                     </Box>
 
                     {/* Switch button */}
-                    <Box>
+                    <Box className = "header__switch">
                       <Switch
                         checked={state.checked}
                         onChange={handleChange}

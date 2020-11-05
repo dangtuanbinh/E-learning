@@ -63,9 +63,19 @@
     width: 60%;
     transition: all 0.8s ease-in-out;
   }
-  &__searchIcon, &__listIcon {
+  &__searchIcon,
+  &__listIcon {
     color: $primary;
     margin-left: spacing(2);
     cursor: pointer;
+  }
+  &__switch {
+    margin-left: spacing(1.3);
+    cursor: pointer;
+  }
+  &__searchIcon:hover,
+  &__listIcon:hover {
+    color: $textGrey;
+    transition: all 0.5s ease-in-out;
   }
 }

@@ -21,10 +21,10 @@ const WishListModal = (props) => {
   let { modal, toggleModal } = props;
   // Get wish list
   const wishList = useSelector((state) => {
-    return state.wishList.wishList;
+    return state.wishList.wishListCourse;
   });
   // End of get wish list
-  
+
   // Render WishListItem
   const renderWishListItem = () => {
     if (!wishList) return null;
