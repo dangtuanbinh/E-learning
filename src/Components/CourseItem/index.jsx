@@ -16,7 +16,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import AnnouncementIcon from "@material-ui/icons/Announcement";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import img from "../../Assets/img/user-4-49x49.jpg";
-import { Box, Button, Typography } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import Popover from "@material-ui/core/Popover";
 import { useDispatch } from "react-redux";
 import "./index.scss";

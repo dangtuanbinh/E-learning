@@ -25,10 +25,8 @@ const AllCourses = () => {
 
   const renderCourseList = () => {
     if (!courseList) return null;
-    const newCourseList = courseList.filter((newCourse,index) => {
-      return newCourse[index] <= 6
-    })
-    return newCourseList.map((course, index) => {
+
+    return courseList.map((course, index) => {
       return <AllCourseItem course={course} key={index} />;
     });
   };

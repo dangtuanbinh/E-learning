@@ -1,9 +1,9 @@
 import React from "react";
 
-const WishListItem = (props) => {
+const WishListItem = ({course}) => {
     return (
         <>
-        <h1>{props.wishList.tenKhoaHoc}</h1>
+        <h1>{course.wishListCourse.course.tenKhoaHoc}</h1>
         </>
     )
 }

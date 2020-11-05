@@ -10,7 +10,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import logo from "../../Assets/img/horizontal_on_white_by_logaster-removebg-preview.png";
@@ -19,6 +19,8 @@ import SignInButton from "../../Components/SignInButton/index";
 import LogInUser from "../../Components/LogInUser/index";
 import SearchIcon from "@material-ui/icons/Search";
 import ViewListIcon from "@material-ui/icons/ViewList";
+import WishListModal from "../../Components/WishListModal/index";
+import useModal from "../../HOCs/useModal";
 import "./index.scss";
 
 const PageHeader = () => {
@@ -35,7 +37,7 @@ const PageHeader = () => {
 
   // NavBar Toggler
   const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+  const navBarToggle = () => setIsOpen(!isOpen);
   // End of NavBar Toggler
 
   // Switch
@@ -54,19 +56,12 @@ const PageHeader = () => {
   });
   // End of login Setup
 
-  // const [redirect, setRedirect] = useState(null);
-  // useEffect(
-  //   setTimeout(() => {
-  //     if (localStorage.getItem("accessToken")) {
-  //       setRedirect("/");
-  //     }
-  //   }, 500),
-  //   []
-  // );
-  // if (redirect) {
-  //     return <Redirect to={redirect} />;
-  //   }
-  
+  // Wish list modal setup
+  const {modal, toggle} = useModal();
+  const renderWishListModal = () =>{
+    return <WishListModal modal={modal} toggleModal={toggle}/>
+  }
+  // End of modal setup
   return (
     <>
       <Box className="pageHeader">
@@ -84,7 +79,7 @@ const PageHeader = () => {
               <img src={logo} alt="logo"></img>
             </Box>
           </NavbarBrand>
-          <NavbarToggler dark onClick={toggle} />
+          <NavbarToggler dark onClick={navBarToggle} />
           <Collapse className="pageHeader__navBar" isOpen={isOpen} navbar>
             <Box>
               <Nav className="pageHeader__nav" navBar>
@@ -134,6 +129,7 @@ const PageHeader = () => {
                 {/* Wish-list icon */}
                 <Box className="pageHeader__listIcon">
                       <ViewListIcon  />
+                      {renderWishListModal()}
                     </Box>
 
                 {/* Switch button */}

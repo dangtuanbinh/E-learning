@@ -1,5 +1,5 @@
 import { Box } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import {
@@ -21,8 +21,11 @@ const WishListModal = (props) => {
   let { modal, toggleModal } = props;
   // Get wish list
   const wishList = useSelector((state) => {
-    return state.wishList.wishListCourse;
+    return state.wishList.wishList;
   });
+  useEffect (() => {
+    console.log(wishList)
+  }, [wishList])
   // End of get wish list
 
   // Render WishListItem

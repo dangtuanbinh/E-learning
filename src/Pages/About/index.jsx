@@ -2,7 +2,7 @@ import React from "react";
 import PageBanner from "../../Components/PageBanner/index";
 import { useState } from "react";
 import PreloadingPage from "../../Components/PreloadingPage/index";
-import PageHeader from "../../Components/PageHeader/index";
+import Header from "../../Components/Header/index";
 import Footer from "../../Components/Footer/index";
 import Content from "../../Components/AboutContent/index";
 import History from "../../Components/AboutOurHistory/index"
@@ -21,7 +21,7 @@ const About = () => {
         <PreloadingPage />
       ) : (
         <>
-          <PageHeader />
+          <Header />
           <PageBanner />
           <Content />
           <History />

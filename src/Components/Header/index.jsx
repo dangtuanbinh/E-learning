@@ -10,7 +10,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import { NavLink } from "react-router-dom";
 import "./index.scss";
@@ -23,6 +23,7 @@ import LogInUser from "../../Components/LogInUser/index";
 import ViewListIcon from "@material-ui/icons/ViewList";
 import useModal from "../../HOCs/useModal";
 import WishListModal from "../../Components/WishListModal/index";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   // Header size change
@@ -59,18 +60,26 @@ const Header = () => {
   // End of user login
 
   // Wish list modal setup
-  const {modal, toggle} = useModal();
-  const renderWishListModal = () =>{
-    return <WishListModal modal={modal} toggleModal={toggle}/>
-  }
+  const { modal, toggle } = useModal();
+  const renderWishListModal = () => {
+    return <WishListModal modal={modal} toggleModal={toggle} />;
+  };
   // End of modal setup
+
+  // Change header
+  const location = useLocation();
+  const { pathname } = location;
+  // End of change header
+
   return (
     <>
       <Box className="header">
         <Box
           className={navBar ? "header__container__scroll" : "header__container"}
         >
-          <Navbar light expand="md">
+          <Navbar light expand="md"
+      
+          >
             <NavbarBrand>
               <Box className="header__navBrand">
                 <img src={logo}></img>
@@ -102,7 +111,7 @@ const Header = () => {
                   </NavItem>
 
                   <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle className="header__navLink" nav >
+                    <DropdownToggle className="header__navLink" nav>
                       Course
                     </DropdownToggle>
                     <DropdownMenu right>
@@ -125,17 +134,17 @@ const Header = () => {
 
                     {/* Search Icon */}
                     <Box className="header__searchIcon">
-                      <SearchIcon  />
+                      <SearchIcon />
                     </Box>
 
                     {/* Wish-list icon */}
-                     <Box onClick={toggle} className="header__listIcon">
-                      <ViewListIcon  />
+                    <Box onClick={toggle} className="header__listIcon">
+                      <ViewListIcon />
                       {renderWishListModal()}
                     </Box>
 
                     {/* Switch button */}
-                    <Box className = "header__switch">
+                    <Box className="header__switch">
                       <Switch
                         checked={state.checked}
                         onChange={handleChange}
