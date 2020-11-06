@@ -9,6 +9,8 @@ import History from "../../Components/AboutOurHistory/index"
 import Banner from "../../Components/AboutBanner/index"
 import Partner from "../../Components/AboutOurPartners/index"
 
+testpush
+
 const About = () => {
   const [loadingPage, setLoadingPage] = useState(true);
   setTimeout(() => {
