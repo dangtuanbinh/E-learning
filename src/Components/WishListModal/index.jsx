@@ -6,6 +6,7 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
+  ModalFooter,
   Button,
   Form,
   FormGroup,
@@ -16,6 +17,7 @@ import { useSelector } from "react-redux";
 import WishListItem from "../../Components/WishListItem/index"
 
 import "./index.scss";
+
 
 const WishListModal = (props) => {
   let { modal, toggleModal } = props;
@@ -46,6 +48,10 @@ const WishListModal = (props) => {
           <ModalBody>
             {renderWishListItem()}
           </ModalBody>
+          <ModalFooter>
+            <Button color="primary">Cancel</Button>
+            <Button color="secondary">Confirm</Button>
+          </ModalFooter>
         </Modal>
       </Box>
     </>
