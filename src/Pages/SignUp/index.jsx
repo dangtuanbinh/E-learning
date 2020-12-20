@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import PageHeader from "../../Components/PageHeader/index";
+import Header from "../../Components/Header/index";
 import Footer from "../../Components/Footer/index";
 import PreloadingPage from "../../Components/PreloadingPage/index";
 import PageBanner from "../../Components/PageBanner/index";
@@ -63,7 +63,7 @@ const SignUp = () => {
         <PreloadingPage />
       ) : (
         <>
-          <PageHeader />
+          <Header />
           <PageBanner />
           <Box className="signUp">
             <Container>
