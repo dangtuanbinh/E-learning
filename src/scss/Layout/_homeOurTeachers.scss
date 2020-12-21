@@ -1,0 +1,103 @@
+.our-teachers {
+  &__title {
+    position: relative;
+    height: 20.6px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    margin-top: 100px;
+
+    h6 {
+      color: #151515;
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 40px;
+      position: relative;
+      display: block;
+      background: white;
+      width: fit-content;
+      left: 50%;
+      transform: translate(-50%, 0);
+      padding: 0 16px;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    width: 100vw;
+    background: #d7d7d7;
+    left: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: -30px;
+
+    @include MediaQuery(1279px) {
+      justify-content: space-around;
+    }
+
+    &__item {
+      width: 289.984px;
+      position: relative;
+      overflow: hidden;
+      width: 330px;
+      margin-bottom: 30px;
+
+      &__detail {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translate(12%, -35%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
+        transition: all 0.3s ease;
+  
+        h5 {
+          color: #ffffff;
+          font-size: 20px;
+          line-height: 1.2;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          transition-delay: 0s;
+          transition-duration: 0.3s;
+          transition-property: all;
+          transition-timing-function: ease;
+  
+          &:hover {
+            color: #72d5a5;
+          }
+        }
+  
+        p {
+          color: #9c9999;
+          line-height: 1.5;
+          letter-spacing: 0.025em;
+        }
+  
+        &::after {
+          width: 313px;
+          height: 75px;
+          content: "";
+          position: absolute;
+          transform: skew(10deg) translate(-24%, -9%);
+          background-color: rgba(17, 17, 17, 0.5);
+          z-index: -1;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+
+      &:hover &__detail {
+        transform: translate(36%, -35%);
+      }
+    }
+  }
+}
