@@ -1,0 +1,61 @@
+.contact-contact-detail {
+  padding-top: 60px;
+
+  @include MediaQuery($lg) {
+    .MuiGrid-justify-xs-space-between-29{
+      justify-content: center;
+    }
+}
+
+  &__item {
+    border: 1px solid #e1e1e1;
+    height: 310px;
+    display: flex;
+    flex-flow: colum;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 330px;
+    margin: auto;
+    margin-bottom: 30px;
+    @include TransitionValue();
+
+    a {
+      font-size: 18px;
+      line-height: 1.67;
+      letter-spacing: 0.025em;
+      color: #151515;
+      font-weight: 400;
+      @include TransitionValue();
+
+      &:hover {
+        color: #4261e4;
+        text-decoration: none;
+      }
+    }
+
+    &:hover &__line {
+      height: 2px;
+      width: 100px;
+      margin: 30px auto;
+    }
+
+    &:hover {
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.17);
+    }
+
+    svg {
+      font-size: 60px;
+      line-height: 1;
+      color: #4261e4;
+    }
+
+    &__line {
+      margin: 17px auto;
+      height: 0;
+      width: 0;
+      background: #50ba87;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

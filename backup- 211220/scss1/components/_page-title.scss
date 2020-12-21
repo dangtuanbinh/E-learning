@@ -1,0 +1,15 @@
+@import "../helpers/function";
+@import "../helpers/mixin";
+
+.page-title {
+  font-size: 40px;
+  line-height: 0.88;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: #151515;
+  text-align: center;
+
+  @include MediaQuery($md) {
+    font-size: 32px;
+  }
+}
