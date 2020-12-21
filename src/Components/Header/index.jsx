@@ -11,7 +11,6 @@ import {
   DropdownItem,
 } from "reactstrap";
 import React, { useState, useEffect } from "react";
-import SearchIcon from "@material-ui/icons/Search";
 import { NavLink } from "react-router-dom";
 import "./index.scss";
 import logo from "../../Assets/img/horizontal_on_white_by_logaster-removebg-preview.png";
@@ -24,6 +23,8 @@ import ViewListIcon from "@material-ui/icons/ViewList";
 import useModal from "../../HOCs/useModal";
 import WishListModal from "../../Components/WishListModal/index";
 import { useLocation } from "react-router-dom";
+import SearchButton from "../../Components/SearchButton/index";
+import Badge from "reactstrap/lib/Badge";
 
 const Header = () => {
   // Header size change
@@ -71,20 +72,25 @@ const Header = () => {
   const { pathname } = location;
   // End of change header
 
-  const navClass = pathname === "/" ? (navBar ? " header__container__scroll" : " header__container") : (navBar ? "header__container__scroll" : "header__pageHeader ")
+  const navClass =
+    pathname === "/"
+      ? navBar
+        ? " header__container__scroll"
+        : " header__container"
+      : navBar
+      ? "header__container__scroll"
+      : "header__pageHeader ";
 
   return (
     <>
       <Box className="header">
-        <Box
-          className= {navClass}
-          // className={
-          //   navBar ? "header__container__scroll" : "header__container"}
-        >
+        <Box className={navClass}>
           <Navbar light expand="md">
             <NavbarBrand>
               <Box className="header__navBrand">
-                <img src={logo}></img>
+                {/* <img src={logo}></img> */}
+                <h4>Cyberpunk</h4>
+                <h3>Academy</h3>
               </Box>
             </NavbarBrand>
             <NavbarToggler onClick={navBarToggle} />
@@ -112,36 +118,31 @@ const Header = () => {
                     </NavLink>
                   </NavItem>
 
-                  <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle className="header__navLink" nav>
+                  <NavItem>
+                    <NavLink className="header__navLink" to="/courses">
                       Course
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem href="#category">Category</DropdownItem>
-                      <DropdownItem href="#course">
-                        Popular courses
-                      </DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem>
-                        <NavLink to="/courses">All Course</NavLink>
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </UncontrolledDropdown>
+                    </NavLink>
+                  </NavItem>
+
+                  <NavItem>
+                    <NavLink className="header__navLink" to="/admin">
+                      Admin
+                    </NavLink>
+                  </NavItem>
+
                   <Box className="header__icon">
                     {/* Signin Button */}
-                    <Box>
-                      {loggedInUser ? <LogInUser /> : <SignInButton />}
-                      {/* <LogInUser /> */}
-                    </Box>
+                    <Box>{loggedInUser ? <LogInUser /> : <SignInButton />}</Box>
 
                     {/* Search Icon */}
-                    <Box className="header__searchIcon">
-                      <SearchIcon />
+                    <Box>
+                      <SearchButton />
                     </Box>
 
                     {/* Wish-list icon */}
                     <Box onClick={toggle} className="header__listIcon">
                       <ViewListIcon />
+
                       {renderWishListModal()}
                     </Box>
 

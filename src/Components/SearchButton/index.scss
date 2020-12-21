@@ -1,0 +1,11 @@
+@import "../../scss/config";
+
+.searchButton {
+  color: $primary;
+  margin-left: spacing(2);
+  cursor: pointer;
+  &:hover{
+    color: $textGrey;
+    transition: all 0.5s ease-in-out;
+  }
+}

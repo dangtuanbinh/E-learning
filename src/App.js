@@ -8,12 +8,14 @@ import Event from "./Pages/Events/index";
 import Contact from "./Pages/Contact/index";
 import Detail from "./Pages/DetailCourse/index";
 import SignUp from "./Pages/SignUp/index";
+import Admin from "./Pages/Admin/index"
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <Switch>
+          <Route path="/admin" component={Admin} />
           <Route path="/signup" component={SignUp} />
           <Route path="/contact" component={Contact} />
           <Route path="/detail" component={Detail} />
