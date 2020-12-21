@@ -32,7 +32,9 @@
         padding:spacing(1)
     }
     &__navBar{
+        display: flex;
         justify-content: flex-end;
+        flex-wrap: wrap;
     }
 
     &__leftNav{
