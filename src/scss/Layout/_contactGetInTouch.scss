@@ -1,0 +1,119 @@
+.contact-get-in-touch {
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  &__form {
+    margin-top: 26px;
+
+    &__input,
+    textarea {
+      width: 100%;
+      padding: 17px 22px;
+      background-color: #f7f7f7;
+      border: none;
+      outline: none;
+    }
+
+    &__button {
+      margin: 0 7px;
+      margin-top: 33px;
+      min-width: 256px;
+      width: auto;
+      background: #4261e4;
+      padding: 19px 35px 17px;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      border: 2px solid transparent;
+      @include TransitionValue();
+
+      &:hover{
+        color: #151515;
+        background: #ffff;
+        border: 2px solid #151515;
+      }
+    }
+
+    :focus::placeholder{
+      color: transparent;
+    }
+
+    ::placeholder {
+      color: #151515;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.025em;
+    }
+
+    .MuiGrid-spacing-xs-2-33 > .MuiGrid-item-11 {
+      padding: 0 7px;
+      margin-bottom: 14px;
+    }
+
+    textarea {
+      margin: 0 7px;
+    }
+  }
+
+  &__caption {
+    display: flex;
+    color: #151515;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include MediaQuery(575px) {
+      flex-direction: column;
+    }
+
+    h3 {
+      flex-shrink: 0;
+      font-size: 32px;
+      line-height: 0.88;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+
+      @include MediaQuery($xs) {
+        margin-bottom: 15px;
+      }
+
+      @media screen and (min-width: 768px) {
+        font-size: 40px;
+      }
+
+      @media screen and (min-width: 992px) {
+        font-size: 48px;
+        line-height: 1.20833;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.71429;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin-bottom: 15px;
+      margin-left: 32px;
+
+      @include MediaQuery($xs) {
+        border-left: none;
+        border-top: 1px solid #e1e1e1;
+        padding-top: 20px;
+        text-align: center;
+      }
+
+      @media screen and (min-width: 576px) {
+        text-align: left;
+        flex-direction: row;
+        padding-left: 28px;
+        border-top: none;
+        border-left: 1px solid #e1e1e1;
+      }
+
+      @media screen and (min-width: 768px) {
+        font-size: 18px;
+      }
+    }
+  }
+}

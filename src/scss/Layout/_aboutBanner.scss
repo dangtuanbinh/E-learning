@@ -1,0 +1,73 @@
+.about-banner {
+  text-align: center;
+    color: #ffffff;
+  background: url('../../Assets/img/bg-counter-2.jpg');
+  background-attachment: fixed;
+  background-position: center center;
+  @include ComponentPadding(60px);
+
+  &__item {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      height: 68px;
+      width: 1px;
+      background: rgba(244, 244, 244, 0.55);
+      margin-top: -34px;
+
+      @include MediaQuery($sm){
+        &{
+            right: 50%;
+            bottom: 0;
+            height: 1px;
+            width: 80%;
+            transform: translate(50%,50%);
+            top: auto;
+        }
+    }
+    }
+    
+    &:last-child:before {
+        display: none;
+    }
+
+    &:nth-child(2):before{
+        @include MediaQuery($lg){
+            &{
+                display: none;
+            }
+        }
+
+        @include MediaQuery($sm){
+            &{
+                display: block;
+            }
+        }
+    }
+  }
+
+  p {
+    font-size: 48px;
+    line-height: 0.8;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+  }
+
+  h5 {
+    margin-top: 30px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: 24px;
+    line-height: 1.2;
+
+    @include MediaQuery($md) {
+      & {
+        font-size: 20px;
+      }
+    }
+  }
+}

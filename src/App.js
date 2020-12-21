@@ -9,6 +9,9 @@ import Contact from "./Pages/Contact/index";
 import Detail from "./Pages/DetailCourse/index";
 import SignUp from "./Pages/SignUp/index";
 import Admin from "./Pages/Admin/index"
+import SingleEvent from "./Pages/SingleEvent/index";
+import UserAdmin from "./Pages/UserAdmin/index";
+import CourseAdmin from "./Pages/CourseAdmin/index";
 
 class App extends Component {
   render() {
@@ -22,6 +25,9 @@ class App extends Component {
           <Route path="/event" component={Event} />
           <Route path="/courses" component={AllCourses} />
           <Route path="/about" component={About} />
+          <Route path="/single-event" component={SingleEvent} />
+          <Route path="/user-admin" component={UserAdmin} />
+          <Route path="/course-admin" component={CourseAdmin} />
           <Route path="/" component={Home} />
         </Switch>
       </BrowserRouter>

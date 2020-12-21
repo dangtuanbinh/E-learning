@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import Header from "../../Components/Header/index";
+import Footer from "../../Components/Footer";
 import Banner from "../../Components/PageBanner/index";
-import ContactGetInTouch from "../../Components/ContactUsGetInTouch/index";
-import ContactMap from "../../Components/ContactMap";
-import ContactContactDetail from "../../Components/ContactContactDetail";
+import Header from "../../Components/Header";
+import SingleEventDetail from "../../Components/SingleEventDetail";
 import PreloadingPage from "../../Components/PreloadingPage/index";
 
-const Contact = () => {
+const SingleEvent = () => {
   const [loadingPage, setLoadingPage] = useState(true);
   setTimeout(() => {
     setLoadingPage(false);
   }, 1200);
+
   return (
     <>
       {loadingPage ? (
@@ -19,12 +19,12 @@ const Contact = () => {
         <>
           <Header />
           <Banner />
-          <ContactMap />
-          <ContactContactDetail />
-          <ContactGetInTouch />
+          <SingleEventDetail />
+          <Footer />
         </>
       )}
     </>
   );
-};
-export default Contact;
+}
+
+export default SingleEvent;
