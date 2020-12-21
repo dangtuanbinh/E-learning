@@ -1,9 +1,9 @@
+import { Typography } from "@material-ui/core";
 import React, { useState } from "react";
 import Header from "../../Components/Header/index";
 import Banner from "../../Components/PageBanner/index";
-import ContactGetInTouch from "../../Components/ContactUsGetInTouch/index";
-import ContactMap from "../../Components/ContactMap";
-import ContactContactDetail from "../../Components/ContactContactDetail";
+import Content from "../../Components/ContactUsGetInTouch/index";
+import Footer from "../../Components/Footer/index";
 import PreloadingPage from "../../Components/PreloadingPage/index";
 
 const Contact = () => {
@@ -19,9 +19,9 @@ const Contact = () => {
         <>
           <Header />
           <Banner />
-          <ContactMap />
-          <ContactContactDetail />
-          <ContactGetInTouch />
+          <Content />
+          <Typography component="h2">this is Contact page</Typography>
+          <Footer />
         </>
       )}
     </>

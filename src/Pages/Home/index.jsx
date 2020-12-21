@@ -7,7 +7,7 @@ import AdverBanner from "../../Components/AdverBanner/index";
 import Course from "../../Components/Course";
 import BottomBanner from "../../Components/BottomBanner";
 import OurTeacher from "../../Components/OurTeachers";
-import HomeUpcomingEvent from "../../Components/HomeUpcomingEvent";
+import Event from "../../Components/UpcomingEvent";
 import Footer from "../../Components/Footer";
 import PreloadingPage from "../../Components/PreloadingPage/index";
 
@@ -33,7 +33,7 @@ const Home = () => {
           <Course />
           <BottomBanner />
           <OurTeacher />
-          <HomeUpcomingEvent />
+          <Event />
           <Footer />
         </>
       )}
