@@ -17,10 +17,13 @@
     }
     &__container__scroll{
         width: 100%;
-        height: 90px;
+        height: 85px;
         margin-top: 0;
         transition: all 0.7s ease-in-out;
-        background: linear-gradient(90deg, rgba(254,253,253,1) 0%, rgba(60,241,230,1) 56%, rgba(254,253,253,1) 100%);
+        border-top: 2px solid rgba(60,241,230,1);
+        border-bottom: 2px solid rgba(60,241,230,1);;
+        background: white;
+        z-index: 10;
     }
     &__pageHeader{
         width: 100%;

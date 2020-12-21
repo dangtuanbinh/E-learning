@@ -1,6 +1,6 @@
 import { Box } from "@material-ui/core";
 import React, { useState } from "react";
-import PageHeader from "../../Components/PageHeader/index";
+import Header from "../../Components/Header/index";
 import PageBanner from "../../Components/PageBanner/index";
 import Footer from "../../Components/Footer/index";
 import PreloadingPage from "../../Components/PreloadingPage/index";
@@ -43,7 +43,7 @@ const AllCourses = () => {
         <PreloadingPage />
       ) : (
         <>
-          <PageHeader />
+          <Header />
           <PageBanner />
           <Container>
             <Box className="allCourse">

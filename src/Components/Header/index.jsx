@@ -64,22 +64,24 @@ const Header = () => {
   const renderWishListModal = () => {
     return <WishListModal modal={modal} toggleModal={toggle} />;
   };
-  // End of modal setup
+  // End of wish list modal setup
 
   // Change header
   const location = useLocation();
   const { pathname } = location;
   // End of change header
 
+  const navClass = pathname === "/" ? (navBar ? " header__container__scroll" : " header__container") : (navBar ? "header__container__scroll" : "header__pageHeader ")
+
   return (
     <>
       <Box className="header">
         <Box
-          className={navBar ? "header__container__scroll" : "header__container"}
+          className= {navClass}
+          // className={
+          //   navBar ? "header__container__scroll" : "header__container"}
         >
-          <Navbar light expand="md"
-      
-          >
+          <Navbar light expand="md">
             <NavbarBrand>
               <Box className="header__navBrand">
                 <img src={logo}></img>
