@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { withStyles } from "@material-ui/core/styles";
 import Header from "../../Components/Header/index";
 import Carousel from "../../Components/Carousel/index";
 import Banner from "../../Components/Banner/index";

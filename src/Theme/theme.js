@@ -3,12 +3,14 @@ import {createMuiTheme} from '@material-ui/core';
 const theme = createMuiTheme({
     palette:{
         primary:{
-            light: 'pink',
-            main: '#f38b9c',
-            dark:'#f3556f'
+            light: '#7986cb',
+            main: '#3f51b5',
+            dark:'#303f9f',
         },
         secondary:{
-            main: "#19a8e6",
+            light: '#ff4081',
+            main: '#f50057',
+            dark: '#c51162', 
         },
         background:{},
         text:{
@@ -42,7 +44,10 @@ const theme = createMuiTheme({
         body2: {},
     },
     breakpoints:{},
-    spacin: 10,
+    spacing: 10,
+    shape: {
+        borderRadius: 4,
+    }
 });
 
 export default theme;

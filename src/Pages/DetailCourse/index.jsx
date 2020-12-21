@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 import React, { Component } from "react";
-import wrapper from "../../HOCs/functionWrapper"
+
 
 class DetailCourse extends Component {
   render() {
@@ -11,4 +11,4 @@ class DetailCourse extends Component {
     );
   }
 }
-export default  wrapper(DetailCourse);
+export default  DetailCourse;
