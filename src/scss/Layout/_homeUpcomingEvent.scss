@@ -22,6 +22,10 @@
       padding: 20px 15px;
       background: #ffffff;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.27);
+
+      a:hover{
+        text-decoration: none;
+      }
     }
 
     &__social {

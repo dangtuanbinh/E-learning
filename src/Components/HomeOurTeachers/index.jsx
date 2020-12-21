@@ -1,42 +1,42 @@
-import { Container } from "@material-ui/core";
 import React from "react";
-import style from "./style";
+import "../../Scss/main.scss";
 import teacher1 from "../../Assets/img/team-1-370x406.jpg";
 import teacher2 from "../../Assets/img/team-2-370x406.jpg";
 import teacher3 from "../../Assets/img/team-3-370x406.jpg";
+import { Container } from "@material-ui/core";
 
-export default function index() {
-  const classes = style();
+const HomeOurTeachers = () => {
+
   return (
-    <section className={classes.OurTeachers}>
+    <section className="our-teachers">
       <Container fixed>
-        <div div className={classes.title}>
-          <div className={classes.line}></div>
-          <h6 className={classes.h6title}>
+        <div className="our-teachers__title">
+          <div className="our-teachers__line"></div>
+          <h6>
             OUR TEACHERS
           </h6>
         </div>
 
-        <div className={classes.OurTeachersWrapper}>
-          <div className={classes.OurTeachersItem}>
+        <div className="our-teachers__wrapper">
+          <div className="our-teachers__wrapper__item">
             <img src={teacher1} alt="teacher1" />
-            <div className={classes.OurTeachersItemDetailText}>
+            <div className="our-teachers__wrapper__item__detail">
               <h5>Sam Lee</h5>
               <p>Business Strategy Teacher</p>
             </div>
           </div>
 
-          <div className={classes.OurTeachersItem}>
+          <div className="our-teachers__wrapper__item">
             <img src={teacher2} alt="teacher2" />
-            <div className={classes.OurTeachersItemDetailText}>
+            <div className="our-teachers__wrapper__item__detail">
               <h5>Peter Wilson</h5>
               <p>HR Management Teacher</p>
             </div>
           </div>
 
-          <div className={classes.OurTeachersItem}>
+          <div className="our-teachers__wrapper__item">
             <img src={teacher3} alt="teacher3" />
-            <div className={classes.OurTeachersItemDetailText}>
+            <div className="our-teachers__wrapper__item__detail">
               <h5>Jill Sanders</h5>
               <p>Brand Strategy Teacher</p>
             </div>
@@ -46,3 +46,6 @@ export default function index() {
     </section>
   );
 }
+
+export default HomeOurTeachers;
+

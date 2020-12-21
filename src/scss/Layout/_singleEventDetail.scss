@@ -27,8 +27,9 @@
       }
     }
 
-    &__badge, &__item:nth-child(2){
-        margin-right: 36px;
+    &__badge,
+    &__item:nth-child(2) {
+      margin-right: 36px;
     }
 
     &__item {
