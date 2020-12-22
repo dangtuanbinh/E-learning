@@ -4,16 +4,11 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
+  NavItem,  
 } from "reactstrap";
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./index.scss";
-import logo from "../../Assets/img/horizontal_on_white_by_logaster-removebg-preview.png";
 import { Box } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import SignInButton from "../../Components/SignInButton/index";
@@ -24,7 +19,7 @@ import useModal from "../../HOCs/useModal";
 import WishListModal from "../../Components/WishListModal/index";
 import { useLocation } from "react-router-dom";
 import SearchButton from "../../Components/SearchButton/index";
-import Badge from "reactstrap/lib/Badge";
+
 
 const Header = () => {
   // Header size change
@@ -57,7 +52,7 @@ const Header = () => {
   // Set up Login user
   const loggedInUser = useSelector((state) => {
     return state.auth.loggedInUser;
-  });
+  }); 
   // End of user login
 
   // Wish list modal setup

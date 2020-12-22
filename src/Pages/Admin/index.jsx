@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Header from "../../Components/Header/index";
-import Footer from "../../Components/Footer";
 import PreloadingPage from "../../Components/PreloadingPage/index";
+import DashBoard from "../../Components/DashBoard/index";
 
 const Admin = () => {
   //Loading Page
@@ -17,7 +17,7 @@ const Admin = () => {
       ) : (
         <>
           <Header />
-          <h1>This is admin page</h1>
+          <DashBoard />
         </>
       )}
     </>
