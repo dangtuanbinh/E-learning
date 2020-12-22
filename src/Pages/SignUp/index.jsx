@@ -13,7 +13,7 @@ import PreloadingPage from "../../Components/PreloadingPage/index";
 import PageBanner from "../../Components/PageBanner/index";
 import "./index.scss";
 import { Col, Row } from "reactstrap";
-import {signUp} from "../../Action/userAction"
+import {signUp} from "../../Redux/Actions/userAction"
 
 const SignUp = () => {
   // Handle Submit
