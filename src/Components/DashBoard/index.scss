@@ -2,9 +2,8 @@
 
 .dashBoard {
   margin-top: spacing(10);
-  width: 100%;
   height: 100vh;
-  &__left {
+  &__left, &__right {
     margin-top: spacing(1);
     height: 100vh;
     border: spacing(0.1) solid $lightGrey;
@@ -28,6 +27,7 @@
         display: none;
       }
     }
+    
   }
   
   
