@@ -80,6 +80,7 @@ const LogInUser = () => {
     });
 
     localStorage.removeItem("accessToken");
+    localStorage.removeItem("credentials");
     if (localStorage.getItem("accessToken" === null)) {
       setRedirect("/");
     }

@@ -1,13 +1,13 @@
-import React from "react";
-import "../../Scss/main.scss";
 import { Container } from "@material-ui/core";
+import React from "react";
+import style from "./style";
 
-const HomeBottomBanner = () => {
-
+export default function index() {
+  const classes = style();
   return (
-    <section className="bottom-banner">
+    <section className={classes.BottomBanner}>
       <Container>
-        <div className="bottom-banner__wrapper">
+        <div className={classes.BottomBannerWrapper}>
           <h3>Programs for Executives</h3>
           <p>
             Our business school provides consistent education for business
@@ -20,6 +20,3 @@ const HomeBottomBanner = () => {
     </section>
   );
 }
-
-export default HomeBottomBanner;
-

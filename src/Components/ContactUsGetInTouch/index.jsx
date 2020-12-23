@@ -19,7 +19,7 @@ const theme = createMuiTheme({
   },
 });
 
-const ContactGetInTouch = () => {
+const ContactUsGetInTouch = () => {
   return (
     <MuiThemeProvider theme={theme}>
       <section className="contact-us-get-in-touch">
@@ -67,4 +67,4 @@ const ContactGetInTouch = () => {
   );
 };
 
-export default ContactGetInTouch;
+export default ContactUsGetInTouch;

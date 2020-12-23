@@ -1,0 +1,34 @@
+@import "../../scss/config";
+
+.dashBoard {
+  margin-top: spacing(10);
+  width: 100%;
+  height: 100vh;
+  &__left {
+    margin-top: spacing(1);
+    height: 100vh;
+    border: spacing(0.1) solid $lightGrey;
+    box-shadow: 1px -1px 5px 6px rgba(0,0,0,0.2);
+  }
+  &__user {
+    text-align: center;
+    padding: spacing(2);
+    border-bottom: spacing(0.15) solid $grey;
+  }
+  &__logOut{
+    text-align: center;
+    margin-top: spacing(2);
+  }
+  &__navigation{
+    display: flex;
+    justify-content: center;
+    margin-top: spacing(1.5);
+    .MuiTabs-vertical{
+      .PrivateTabIndicator-vertical-34{
+        display: none;
+      }
+    }
+  }
+  
+  
+}
