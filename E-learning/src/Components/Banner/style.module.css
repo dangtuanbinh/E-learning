@@ -1,0 +1,58 @@
+.banner{
+    margin: 50px 0 80px 0;
+}
+.bannerContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bannerItem{
+    width: 380px;
+    height: 170px;
+    background: none;
+    border:10px double rgba(238, 236, 236, 0.842);
+    position:relative;
+}
+.bannerItem::after{
+    content: '';
+    width: 0;
+    height: 0;
+    background: #4968ee;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    transition: all 0.4s ease-out;
+}
+.bannerItem:hover .bannerIcon, .bannerItem:hover .bannerLink{
+    color: white;
+}
+.bannerItem:hover::after{
+    z-index: -1;
+    width: 380px;
+    height: 170px;
+}
+.bannerContent{
+    display:flex;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    z-index: 1;
+}
+.bannerIcon{
+    color:#4968ee;
+    margin-right: 20px;
+    z-index: 1;
+}
+.bannerLink{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight:400;
+}
+.bannerItem:hover .bannerLink{
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+}

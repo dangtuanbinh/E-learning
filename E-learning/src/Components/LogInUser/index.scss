@@ -1,0 +1,75 @@
+@import "../../scss/config.scss";
+
+.logInUser {
+  &__control {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  &__user {
+    margin-left: spacing(0.5);
+    span {
+      @include Text($textGrey, $h4, $fwRegular, none);
+    }
+  }
+  &__modal {
+    width: 100%;
+    position: relative;
+  }
+  &__modal__content {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    width: spacing(100);
+    height: spacing(60);
+    background: $paper;
+  }
+  // Mui Tab setup
+  &__tab {
+    .MuiTabs-flexContainer {
+      padding: 0;
+      justify-content: space-evenly;
+      border-bottom: spacing(0.2) solid #e0e0e0;
+      button {
+        outline: none;
+      }
+    }
+    .MuiTab-wrapper {
+      @include Text($textGrey, $h6, $fwRegular, none);
+    }
+    .MuiTab-wrapper:hover {
+      color: $primary;
+      font-size: $fwMedium;
+    }
+    .Mui-selected {
+      span {
+        color: $primary;
+      }
+    }
+    .MuiTab-root {
+      min-width: 0;
+      padding: 0;
+    }
+    .MuiPaper-elevation4 {
+      box-shadow: none;
+    }
+    .MuiTouchRipple-root {
+      border-radius: none;
+    }
+    
+  }
+  &__tabIndicator {
+    background-color: white;
+  }
+  // End of Mui Tab setup
+  &__tab__content{
+    margin-top: spacing(5);
+  }
+  &__item{
+    width: 100%;
+    height:spacing(30)
+  }
+  &__item__button{
+    margin-top: spacing(5);
+  }
+}

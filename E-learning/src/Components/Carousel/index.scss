@@ -1,0 +1,59 @@
+@import "../../scss/config";
+
+.carousel{
+    &__item{
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: spacing(70);position: relative;
+        opacity: 0.9;
+    }
+    &__item--1{
+        background-image: url('../../Assets/img/liderNewBackground.jpg');
+    }
+    &__item--2{
+        background-image: url('../../Assets/img/liderNewBackground1.jpg');
+    }
+    &__item--3{
+        background-image: url('../../Assets/img/BG3.jpg');
+    }
+    .carousel-caption{
+        bottom: 27%;
+        z-index: 15;
+    }
+    &__caption{
+        position: relative;
+        h1{
+            @include Text($textBlack,spacing(5.5),$fwMedium,spacing(6));
+            margin-bottom: spacing(2);
+        }
+        p{
+            @include Text($textBlack, $h4, $fwRegular,spacing(3));
+        }
+    }
+    &__caption--1{
+        h1, p{
+            text-align: right;
+        }
+    }
+    &__caption--2{
+        h1, p{
+            text-align: left;
+        }
+    }
+    &__button--1{
+        position: absolute;
+        bottom: -20%;
+        right: 0;
+    }
+    &__button--2{
+        position: absolute;
+        bottom: -20%;
+        left: 0;
+    }
+
+    .carousel-control-prev-icon{
+        position: relative;
+    }
+}

@@ -1,0 +1,41 @@
+@import "../../scss/config";
+
+.learnMoreButton{
+    width: spacing(28);
+    height: spacing(6);
+    border: 2px solid $textBlack;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    &__link{
+        text-decoration: none;
+        @include Text($textBlack,$h6,$fwRegular,spacing(6));
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        z-index: 10;
+    }
+    &::after{
+        content: '';
+        background: transparent;
+        border: 2px solid $primary;
+        position: absolute;
+        width: spacing(28);
+        height: spacing(6);
+        transform: translate(-50%,-50%);
+        display: none;
+        transition: all 0.8s ease-in;
+    }
+    &:hover &__link{
+        text-decoration: none; 
+        color: $primary;
+    }
+    &:hover{
+        border: transparent;
+    }
+    &:hover::after{
+        transform: translate(0,0);
+        display: block;
+    }
+}

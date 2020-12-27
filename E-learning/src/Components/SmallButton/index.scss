@@ -1,0 +1,36 @@
+@import "../../scss/config";
+
+.button{
+    width: spacing(15);
+    height:spacing(6);
+    background: $darkGrey;
+    text-align: center;
+    padding: 0 spacing(1);
+    position: relative;
+    z-index: 1;
+    &__link{
+        text-decoration:none;
+        @include Text($textWhite,$h5,$fwMedium,spacing(6));
+        &:hover{
+            text-decoration: none;
+            color: $textWhite;
+        }
+    }
+    &::after{
+        content: '';
+        width: spacing(0);
+        height: spacing(3);
+        background-color: #4968ee;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        transition: all 0.3s;
+    }
+    &:hover::after{
+        width: spacing(15);
+        height: spacing(6);
+        cursor: pointer;
+    }
+}

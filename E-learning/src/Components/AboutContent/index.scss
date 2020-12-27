@@ -1,0 +1,88 @@
+@import "../../scss/config";
+
+.aboutContent {
+  &__right {
+    padding: spacing(3) 0;
+    h1{
+      @include Text($textBlack,spacing(5.5),$fwLight,none);
+      margin-bottom:spacing(4)
+    }
+  }
+  .MuiTabs-flexContainer{
+    justify-content: space-between;
+    padding: 0;
+    border-bottom: spacing(0.2) solid #e0e0e0;
+    button{
+      outline: none;
+    }
+  }
+  .MuiTab-wrapper{
+    @include Text($textGrey, $h6, $fwRegular, none);
+  }
+  .MuiTab-wrapper:hover{
+    color: $primary;
+    font-size: $fwMedium;
+  }
+  .Mui-selected{
+    span{
+      color: $primary;
+    }
+  }
+  .MuiTab-root{
+    min-width: 0;
+    padding: 0;
+  }
+  .MuiPaper-elevation4{
+    box-shadow: none;
+  }
+  .MuiTouchRipple-root{
+    border-radius: none;
+  }
+  &__tabIndicator {
+    background-color: white;
+  }
+  &__item {
+    p{
+      margin-top: spacing(2);
+      @include Text($subtitle,$textGrey,fwLight,spacing(2.5));
+    }
+  }
+  &__item__content{
+    h2{
+      @include Text($textLightGrey, $h4, $fwRegular, none)
+    }
+  }
+  &__item__icon{
+   position: relative;
+  }
+  &__item__icon::after{
+    content: '';
+    width: 100%;
+    height: spacing(0.9);
+    position: absolute;
+    top: 35%;
+    left: 0;
+    background:$lightGrey;
+    z-index: -1;
+  }
+
+  // Second Tab
+  &__button{
+    margin-top: spacing(2);
+  }
+  &__button__container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  // End of Second tab
+}
+@keyframes #{iconMove} {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(85%);
+  }
+}

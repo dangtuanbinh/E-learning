@@ -1,0 +1,13 @@
+@import "../../scss/config";
+
+.adverBannerContent {
+    z-index: 1;
+   h1{
+       @include Text($textWhite,$h1,$fwRegular,spacing(5));
+       margin-bottom: spacing(2);
+   }
+   p{
+       @include Text($textWhite,$h4,$fwRegular,spacing(3))
+       margin-bottom:spacing(2);
+   }
+}

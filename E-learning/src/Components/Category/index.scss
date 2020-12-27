@@ -1,0 +1,80 @@
+@import "../../scss/config";
+
+.category {
+  margin: spacing(5) 0;
+  &__headline {
+    margin-bottom: spacing(3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+      @include Text($textGrey, $h4, $fwMedium, spacing(2));
+      flex-grow: 1;
+    }
+  }
+  &__line{
+      width: spacing(50);
+      height: spacing(0.1);
+      background:$grey;
+      opacity: 0.5;
+  }
+  &__image{
+    width: 100%;
+    height:spacing(33);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+  }
+  &__image--1{
+    background-image: url('../../Assets/img/frontendBG.jpg');
+  }
+  &__image--2{
+    background-image: url('../../Assets/img/backendBG.jpg');
+  }
+  &__image--3{
+    background-image: url('../../Assets/img/algorithmsBG.jpg');
+  }
+  &__image--4{
+    background-image: url('../../Assets/img/OOPBG.jpg');
+  }
+  &__text{
+    width: 100%;
+    height: spacing(8);
+    margin-bottom: spacing(2);
+    padding: 0 spacing(3);
+    border: 1px solid $lightGrey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__text__line{
+    width: spacing(2);
+    height: spacing(0.5);
+    background: $lightGrey;
+  }
+  &__icon__container{
+    display: flex;
+    align-items: center;
+  }
+  &__icon{
+    font-size: large;
+    color: $lightGrey;
+  }
+  span{
+    @include Text($textBlack, $h4, $fwLight, spacing(1));
+  }
+  &__item:hover &__text{
+    background-color: $primary;
+    transition: all 0.4s;
+    span{
+      font-size: spacing(2.2);
+      letter-spacing: spacing(0.2);
+      color: $textWhite;
+      transition: all 0.4s;
+    }
+  }
+  &__item:hover &__text__line{
+    width: spacing(8);
+    transition: all 0.4s;
+  }
+}
