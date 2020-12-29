@@ -36,3 +36,18 @@ export const logIn = (loginUser) => {
       });
   };
 };
+
+export const getUserList = (userList) => {
+  return () => {
+    Axios({
+      url: "https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01",
+      method: "GET",
+      data: userList,
+    }).then((res) => {
+      console.log(res)
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+  
+}
