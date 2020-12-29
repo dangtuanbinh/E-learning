@@ -9,7 +9,7 @@ const wishListReducer = (state = initialState, actions) => {
         (item) =>
           item.wishListCourse.course.tenKhoaHoc ===
           actions.payload.course.tenKhoaHoc
-      );
+      ); 
       
       if (index == -1) {
         const wishListItem = {

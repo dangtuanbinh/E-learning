@@ -3,12 +3,14 @@ import thunk from 'redux-thunk';
 import course from './Reducers/courseReducer';
 import auth from './Reducers/authReducer';
 import wishList from './Reducers/wishListReducer'
+import userList from "./Reducers/userListReducer"
 import { compose } from 'redux';
 
 const reducer = combineReducers({
     course, 
     auth,
-    wishList
+    wishList,
+    userList,
 });
 
 // Redux dev tool

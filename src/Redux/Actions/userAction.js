@@ -40,16 +40,19 @@ export const logIn = (loginUser) => {
 };
 
 export const getUserList = (userList) => {
-  return () => {
+  return (dispatch) => {
     Axios({
       url: "https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01",
       method: "GET",
       data: userList,
     }).then((res) => {
       console.log(res)
+      dispatch({
+        type: "GET_USER_LIST",
+        payload: res.data,
+      })
     }).catch((err) => {
       console.log(err)
     })
-  }
-  
+  } 
 }

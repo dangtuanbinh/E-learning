@@ -12,7 +12,7 @@ const Course = () => {
   // getCourseList() will run when the component fist rendered to get courselist
   useEffect(() => {
     dispatch(getListCourse());
-  }, [dispatch]);
+  }, []);
   // Get courseList from store
   const courseList = useSelector((state) => {
     return state.course.courseList;

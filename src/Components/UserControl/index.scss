@@ -9,4 +9,9 @@
     &__content{
         margin-top:spacing(5)
     }
+    &__list{
+        height: 75vh;
+        overflow: scroll;
+    }
+
 }
