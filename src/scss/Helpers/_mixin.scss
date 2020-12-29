@@ -1,0 +1,47 @@
+//MIXIN: text,button,input...
+@mixin Text($color, $fs, $fw) {
+  color: $color;
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+@mixin Button($bg, $br, $brRadius, $padding) {
+  background-color: $bg;
+  border: $br;
+  border-radius: $brRadius;
+  padding: $padding;
+}
+
+$xs:575.8px;
+$sm:600px;
+$md:767px;
+$lg:991px;
+$xl:1199px;
+
+
+@mixin MediaQuery($size){
+  @media screen and (max-width: $size){
+    @content;
+  }
+}
+
+@mixin ComponentPadding($value){
+  padding: $value 0;
+}
+
+@mixin Container(){
+  padding: 0 24px;
+}
+
+@mixin TransitionValue(){
+  transition: all .3s ease;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+    transition-property: all;
+    transition-timing-function: ease;
+}
+

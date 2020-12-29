@@ -8,7 +8,7 @@ import AllCourseItem from "../../Components/AllCourseItem/index";
 import "./index.scss";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getListCourse } from "../../Action/courseAction";
+import { getListCourse } from "../../Redux/Actions/courseAction";
 import { Container, Row } from "reactstrap";
 
 const AllCourses = () => {

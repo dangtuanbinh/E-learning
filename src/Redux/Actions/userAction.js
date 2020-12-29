@@ -25,7 +25,9 @@ export const logIn = (loginUser) => {
       data: loginUser,
     })
       .then((res) => {
-        localStorage.setItem("accessToken", res.data.accessToken);
+        console.log(res.data)
+        localStorage.setItem("credentials", JSON.stringify(res.data));
+        localStorage.setItem("accessToken", JSON.stringify(`Bearer ${res.data.accessToken}`));
         dispatch({
           type: "SET_USER",
           payload: res.data,
@@ -36,3 +38,5 @@ export const logIn = (loginUser) => {
       });
   };
 };
+
+
