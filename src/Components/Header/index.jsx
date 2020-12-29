@@ -10,7 +10,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./index.scss";
 import { Box } from "@material-ui/core";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SignInButton from "../../Components/SignInButton/index";
 import Switch from "@material-ui/core/Switch";
 import LogInUser from "../../Components/LogInUser/index";
@@ -19,7 +19,8 @@ import useModal from "../../HOCs/useModal";
 import WishListModal from "../../Components/WishListModal/index";
 import { useLocation } from "react-router-dom";
 import SearchButton from "../../Components/SearchButton/index";
-
+import { createAction } from "../../Redux/Actions";
+import { FETCH_ACCESS_TOKEN, FETCH_CREDENTIALS } from "../../Redux/Actions/type";
 
 const Header = () => {
   // Header size change
@@ -66,6 +67,28 @@ const Header = () => {
   const location = useLocation();
   const { pathname } = location;
   // End of change header
+
+  //Get credentials and accessToken
+  const dispatch = useDispatch();
+  const getCredentials = () => {
+    const credentialsStr = localStorage.getItem("credentials");
+    const accessTokenStr = localStorage.getItem("accessToken");
+    if (credentialsStr) {
+      dispatch({
+        type: "SET_USER",
+        payload: JSON.parse(credentialsStr),
+      });
+      dispatch({
+        type: "FETCH_ACCESS_TOKEN",
+        payload: JSON.parse(accessTokenStr),
+      });
+    }
+  };
+  useEffect(()=>{
+    getCredentials()
+  },[])
+  //End of get credentials and accessToken
+
 
   const navClass =
     pathname === "/"

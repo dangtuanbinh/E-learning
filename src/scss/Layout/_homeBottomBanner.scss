@@ -1,0 +1,65 @@
+.bottom-banner {
+  position: relative;
+  background-image: url("../../Assets/img/bg-cta-3.jpg");
+  text-align: center;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-position: center;
+  margin-top: 100px;
+  background-attachment: fixed;
+
+  &__wrapper {
+    max-width: 575px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+
+    h3 {
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 0.88;
+    }
+
+    p {
+      color: #ffffff;
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 1.71429;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    button {
+      color: #ffffff;
+      background-color: #353535;
+      padding: 17px 33px 15px;
+      font-size: 14px;
+      line-height: 1.71;
+      border: 2px solid #353535;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      display: flex;
+      margin: auto;
+      margin-top: 30px;
+      @include TransitionValue();
+
+      &:hover {
+        border-color: #4261e4;
+        color: #ffffff;
+        background-color: #4261e4;
+      }
+    }
+  }
+
+  &::after {
+    height: 100%;
+    content: "";
+    background: rgba(24, 26, 35, 0.41);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
