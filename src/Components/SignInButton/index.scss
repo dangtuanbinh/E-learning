@@ -1,0 +1,31 @@
+@import "../../scss/config";
+
+.signInButton{
+    width: spacing(12);
+    height:spacing(4);
+    background: $primary;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    border: spacing(0.2) solid transparent;
+    border-radius: spacing(2);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    &__link{
+        p{
+            @include Text($textWhite,$h5,$fwMedium,spacing(3.5));
+        }
+    }
+   
+    &:hover, &:focus{
+        background: transparent;
+        border: spacing(0.2) solid $primary;
+        border-radius: spacing(2);
+    }
+    &:hover &__link, &:focus &__link{
+        p{
+            color: $primary;
+        }
+    }
+}

@@ -1,0 +1,122 @@
+.category {
+  margin: 50px 0;
+}
+
+.category__headline {
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.category__headline h3 {
+  color: #5f5f5f;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.category__line {
+  width: 500px;
+  height: 1px;
+  background: #989586;
+  opacity: 0.5;
+}
+
+.category__image {
+  width: 100%;
+  height: 330px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.category__image--1 {
+  background-image: url("../../Assets/img/frontendBG.jpg");
+}
+
+.category__image--2 {
+  background-image: url("../../Assets/img/backendBG.jpg");
+}
+
+.category__image--3 {
+  background-image: url("../../Assets/img/algorithmsBG.jpg");
+}
+
+.category__image--4 {
+  background-image: url("../../Assets/img/OOPBG.jpg");
+}
+
+.category__text {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 20px;
+  padding: 0 30px;
+  border: 1px solid #dadccb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.category__text__line {
+  width: 20px;
+  height: 5px;
+  background: #dadccb;
+}
+
+.category__icon__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.category__icon {
+  font-size: large;
+  color: #dadccb;
+}
+
+.category span {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 10px;
+}
+
+.category__item:hover .category__text {
+  background-color: #4968ee;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.category__item:hover .category__text span {
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.category__item:hover .category__text__line {
+  width: 80px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,41 @@
+@import "../../scss/config";
+
+.course__item {
+  .MuiCard-root{
+    max-width: spacing(34.5);
+    margin-bottom: spacing(2);
+    border: 1px solid $lightGrey;
+    border-radius: spacing(0.4);
+    transition: all 0.2s ease-in;
+  }
+  &:hover .MuiCard-root{
+    box-shadow: -1px 2px 14px 0px rgba(152,149,134,1);
+  }
+  &__image{
+    overflow: hidden;
+  }
+  &:hover .MuiCardMedia-root{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out
+  }
+  .MuiCardHeader-content{
+    span{
+      @include Text($textLightGrey,$h5,$fwRegular,none);
+    }
+  }
+  .MuiCardContent-root{
+    @include Text($textBlack, $h3, $fwLight, none)
+  }
+  &__text{
+    text-align: justify;
+    @include Text(
+      $textBlack,$h6, $fwRegular,none
+    );
+    padding: spacing(1);
+  }
+  .MuiCardActions-root{
+    button{
+      outline: none;
+    }
+  }
+}

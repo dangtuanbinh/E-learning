@@ -1,0 +1,12 @@
+@import "../../scss/config";
+
+.userControl{
+    height: 100vh;
+    &__title{
+        padding: spacing(3);
+        border-bottom: spacing(2) solid rgba(147,206,222,1);
+    }
+    &__content{
+        margin-top:spacing(5)
+    }
+}

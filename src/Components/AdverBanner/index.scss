@@ -1,0 +1,33 @@
+@import "../../scss/config";
+
+.adverBanner{
+    width: 100%;
+    height: spacing(50);
+    background-image: url('../../Assets/img/bannerBG.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    margin: spacing(10) 0;
+    position: relative;
+    &::after{
+        content: '';
+        width: 100%;
+        height: spacing(50);
+        background: rgba(24, 26, 35, 0.15);
+        position: absolute;
+        top:0;
+        left: 0;
+    }
+    &__container{
+        position: relative;
+        height: 100%;
+    }
+    &__content{
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        right: 0;
+        z-index: 1;
+    }
+}

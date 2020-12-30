@@ -1,0 +1,36 @@
+.adverBanner {
+  width: 100%;
+  height: 500px;
+  background-image: url("../../Assets/img/bannerBG.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  margin: 100px 0;
+  position: relative;
+}
+
+.adverBanner::after {
+  content: '';
+  width: 100%;
+  height: 500px;
+  background: rgba(24, 26, 35, 0.15);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.adverBanner__container {
+  position: relative;
+  height: 100%;
+}
+
+.adverBanner__content {
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
+  right: 0;
+  z-index: 1;
+}
+/*# sourceMappingURL=index.css.map */
