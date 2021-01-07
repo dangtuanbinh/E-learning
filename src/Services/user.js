@@ -4,7 +4,7 @@ import * as yup from "yup";
 export const signupUserSchema = yup.object().shape({
   taiKhoan: yup.string().required("*Field is required!"),
   matKhau: yup.string().required("*Field is required!"),
-  hoTen: yup.string().required("*Field is required!"),
+  hoTen: yup.str ing().required("*Field is required!"),
   email: yup
     .string()
     .required("*Field is required!")

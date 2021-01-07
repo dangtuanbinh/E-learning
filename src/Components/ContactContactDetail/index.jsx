@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
 import HomeIcon from "@material-ui/icons/Home";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
-import "../../scss/main.scss";
 import { Container, Grid } from "@material-ui/core";
+
+import "./index.scss"
 
 const ContactContactDetail = () => {
   return (

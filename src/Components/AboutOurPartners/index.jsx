@@ -1,5 +1,5 @@
 import React from "react";
-import "../../scss1/main.scss";
+import "./index.scss";
 import client1 from "../../Assets/img/clients-1-270x145.png";
 import client2 from "../../Assets/img/clients-2-270x145.png";
 import client4 from "../../Assets/img/clients-4-270x145.png";

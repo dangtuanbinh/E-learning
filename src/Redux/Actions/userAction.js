@@ -1,14 +1,14 @@
-import Axios from "axios";
+import {connector} from "../../config/connector";
 
-export const signUp = (user) => {
+export const signUp = (user,history) => {
   return (dispatch) => {
-    Axios({
+    connector({
       url: "https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy",
       method: "POST",
       data: user,
     })
       .then((res) => {
-        alert("Sign up sucessful");
+        history.push("/")
       })
       .catch((err) => {
         console.log(err);
@@ -18,14 +18,13 @@ export const signUp = (user) => {
 
 export const logIn = (loginUser) => {
   return (dispatch) => {
-    Axios({
+    connector({
       url:
         "https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
       method: "POST",
       data: loginUser,
     })
       .then((res) => {
-        console.log(res.data)
         localStorage.setItem("credentials", JSON.stringify(res.data));
         localStorage.setItem("accessToken", JSON.stringify(`Bearer ${res.data.accessToken}`));
         dispatch({
@@ -34,14 +33,14 @@ export const logIn = (loginUser) => {
         });
       })
       .catch((err) => {
-        console.log(err);
+        alert(err);
       });
   };
 };
 
 export const getUserList = (userList) => {
   return (dispatch) => {
-    Axios({
+    connector({
       url: "https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01",
       method: "GET",
       data: userList,

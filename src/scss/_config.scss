@@ -43,7 +43,6 @@ $fwLight: 300;
 $spacing: 10px;
 
 // Mixin
-// Tao Mixin: Text,button, table, input
 @mixin Text($color, $fs, $fw, $lh) {
     color: $color;
     font-size: $fs;
@@ -56,38 +55,39 @@ $spacing: 10px;
     border-radius: $br;
     padding: $pad;
 }
-@mixin Input($w,$h,$lh,$p){
-    width:$w;
-    height:$h;
-    line-height:$lh;
-    padding: $p;
+
+
+$xs:575.8px;
+$sm:600px;
+$md:767px;
+$lg:1280px;
+$xl:1080px;
+
+
+@mixin MediaQuery($size){
+  @media screen and (max-width: $size){
+    @content;
+  }
 }
-@mixin Position($translate,$top,$left) {
-    transform: $translate;
-    top: $top;
-    left: $left;
-    
+
+@mixin ComponentPadding($value){
+  padding: $value 0;
 }
-@mixin PositionCenter{
-    transform: translate(-50%,-50%);
-    top:50%;
-    left:50%;
+
+@mixin Container(){
+  padding: 0 24px;
 }
-@mixin Flex($flex,$jContent,$alignItem,$flexDirection){
-    display: $flex;
-    justify-content: $jContent;
-    align-items: $alignItem;
-    flex-direction: $flexDirection;
-}
-@mixin Size($w,$h){
-    width: $w;
-    height: $h;
-}
-@mixin Background($url,$repeat,$size,$position){
-    background-image: $url;
-    background-repeat: $repeat;
-    background-size: $size;
-    background-position: $position $position;
+
+@mixin TransitionValue(){
+  transition: all .3s ease;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+    transition-property: all;
+    transition-timing-function: ease;
 }
 // End of Mixin
 

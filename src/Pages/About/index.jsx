@@ -5,7 +5,6 @@ import PreloadingPage from "../../Components/PreloadingPage/index";
 import Header from "../../Components/Header/index";
 import Footer from "../../Components/Footer/index";
 import Content from "../../Components/AboutContent/index";
-import History from "../../Components/AboutOurHistory/index"
 import Banner from "../../Components/AboutBanner/index"
 import Partner from "../../Components/AboutOurPartners/index"
 
@@ -24,7 +23,6 @@ const About = () => {
           <Header />
           <PageBanner />
           <Content />
-          <History />
           <Banner />
           <Partner />
           <Footer />

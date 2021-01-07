@@ -15,7 +15,7 @@ import "./index.scss";
 import { Col, Row } from "reactstrap";
 import {signUp} from "../../Redux/Actions/userAction"
 
-const SignUp = () => {
+const SignUp = (props) => {
   // Handle Submit
   const dispatch = useDispatch();
   const [userInfo, setUserInfo] = useState({
@@ -35,7 +35,7 @@ const SignUp = () => {
   };
   const handleSubmit = (e) => { 
     e.preventDefault();
-    dispatch(signUp(userInfo));
+    dispatch(signUp(userInfo),props.history);
     
   };
   // End of Handle Submit

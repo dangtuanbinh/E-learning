@@ -19,8 +19,7 @@ import useModal from "../../HOCs/useModal";
 import WishListModal from "../../Components/WishListModal/index";
 import { useLocation } from "react-router-dom";
 import SearchButton from "../../Components/SearchButton/index";
-import { createAction } from "../../Redux/Actions";
-import { FETCH_ACCESS_TOKEN, FETCH_CREDENTIALS } from "../../Redux/Actions/type";
+
 
 const Header = () => {
   // Header size change
@@ -63,10 +62,10 @@ const Header = () => {
   };
   // End of wish list modal setup
 
-  // Change header
+  // Get location
   const location = useLocation();
   const { pathname } = location;
-  // End of change header
+  // End of get location
 
   //Get credentials and accessToken
   const dispatch = useDispatch();

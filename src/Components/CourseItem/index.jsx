@@ -19,6 +19,7 @@ import img from "../../Assets/img/user-4-49x49.jpg";
 import { Box, Typography } from "@material-ui/core";
 import Popover from "@material-ui/core/Popover";
 import { useDispatch } from "react-redux";
+import { withRouter } from "react-router-dom";
 import "./index.scss";
 
 const useStyles = makeStyles((theme) => ({
@@ -57,6 +58,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CourseItem = (props) => {
+  // Go to detail page
+  const goToDetail = (id) => () => {
+    props.history.push("/detail/" + id);
+  };
+  // End of go to detail page
+
   // Card setup
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -108,7 +115,11 @@ const CourseItem = (props) => {
             title={props.course.nguoiTao.hoTen}
           />
           <Box className="course__item__image">
-            <CardMedia className={classes.media} image={props.course.hinhAnh} />
+            <CardMedia
+              className={classes.media}
+              image={props.course.hinhAnh}
+              onClick={goToDetail(props.course.maKhoaHoc)}
+            />
           </Box>
 
           <CardContent>{props.course.tenKhoaHoc}</CardContent>
@@ -202,4 +213,4 @@ const CourseItem = (props) => {
     </>
   );
 };
-export default CourseItem;
+export default withRouter(CourseItem);

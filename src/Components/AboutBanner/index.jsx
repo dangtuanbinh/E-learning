@@ -1,5 +1,5 @@
 import React from "react";
-import "../../scss1/main.scss";
+import "./index.scss";
 import { Container, Grid } from "@material-ui/core";
 
 const AboutBanner = () => {

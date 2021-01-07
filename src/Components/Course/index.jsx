@@ -6,6 +6,7 @@ import "./index.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getListCourse } from "../../Redux/Actions/courseAction";
+import {useLocation} from "react-router-dom"
 
 const Course = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,12 @@ const Course = () => {
   useEffect(() => {
     dispatch(getListCourse());
   }, []);
+
+  // Get location
+const location = useLocation();
+const {pathname} = location;
+  // End of get location
+
   // Get courseList from store
   const courseList = useSelector((state) => {
     return state.course.courseList;
@@ -21,10 +28,12 @@ const Course = () => {
   const renderCourseList = () => {
     if (!courseList) return null;
     let newCourseList =courseList.slice(2,8)
-    return newCourseList.map((course, index) => {
-      return <CourseItem course={course} key={index} />;
-    });
-  };
+    return ( 
+    pathname === "/" ? newCourseList.map((course, index) => {
+      return <CourseItem course={course} key={index} />
+    }) : courseList.map((course, index) => {
+      return <CourseItem course={course} key={index} />}) )
+  }; 
   return (
     <>
       <Container id="course">

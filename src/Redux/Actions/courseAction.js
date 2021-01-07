@@ -1,8 +1,9 @@
 import Axios from 'axios';
+import {connector} from "../../config/connector"
  
 export const getListCourse = () => {
     return (dispatch) => {
-        Axios({
+        connector({
             url: "https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01",
             method: "GET",
             data: null,

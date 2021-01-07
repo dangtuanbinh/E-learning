@@ -4,6 +4,7 @@ import course from './Reducers/courseReducer';
 import auth from './Reducers/authReducer';
 import wishList from './Reducers/wishListReducer'
 import userList from "./Reducers/userListReducer"
+import detailList from "./Reducers/detailCourseReducer";
 import { compose } from 'redux';
 
 const reducer = combineReducers({
@@ -11,6 +12,7 @@ const reducer = combineReducers({
     auth,
     wishList,
     userList,
+    detailList,
 });
 
 // Redux dev tool
